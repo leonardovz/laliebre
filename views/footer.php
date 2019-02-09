@@ -113,23 +113,23 @@
 			<div class="p-t-40">
 				<div class="flex-c-m flex-w p-b-18">
 					<a href="#" class="m-all-1">
-						<img src="images/icons/icon-pay-01.png" alt="ICON-PAY">
+						<img src="<?php echo $ruta;?>images/icons/icon-pay-01.png" alt="ICON-PAY">
 					</a>
 
 					<a href="#" class="m-all-1">
-						<img src="images/icons/icon-pay-02.png" alt="ICON-PAY">
+						<img src="<?php echo $ruta;?>images/icons/icon-pay-02.png" alt="ICON-PAY">
 					</a>
 
 					<a href="#" class="m-all-1">
-						<img src="images/icons/icon-pay-03.png" alt="ICON-PAY">
+						<img src="<?php echo $ruta;?>images/icons/icon-pay-03.png" alt="ICON-PAY">
 					</a>
 
 					<a href="#" class="m-all-1">
-						<img src="images/icons/icon-pay-04.png" alt="ICON-PAY">
+						<img src="<?php echo $ruta;?>images/icons/icon-pay-04.png" alt="ICON-PAY">
 					</a>
 
 					<a href="#" class="m-all-1">
-						<img src="images/icons/icon-pay-05.png" alt="ICON-PAY">
+						<img src="<?php echo $ruta;?>images/icons/icon-pay-05.png" alt="ICON-PAY">
 					</a>
 				</div>
 
@@ -147,16 +147,12 @@
 		</span>
 	</div>
 
-
-<!--===============================================================================================-->	
 	
-<!--===============================================================================================-->
-	<script src="vendor/animsition/js/animsition.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/bootstrap/js/popper.min.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/select2/select2.min.js"></script>
+	
+	<script src="<?php echo $ruta;?>vendor/animsition/js/animsition.min.js"></script>
+	<script src="<?php echo $ruta;?>vendor/bootstrap/js/popper.min.js"></script>
+	<script src="<?php echo $ruta;?>vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="<?php echo $ruta;?>vendor/select2/select2.min.js"></script>
 	<script>
 		$(".js-select2").each(function(){
 			$(this).select2({
@@ -165,19 +161,17 @@
 			});
 		})
 	</script>
-<!--===============================================================================================-->
-	<script src="vendor/daterangepicker/moment.min.js"></script>
-	<script src="vendor/daterangepicker/daterangepicker.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/slick/slick.min.js"></script>
-	<script src="js/slick-custom.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/parallax100/parallax100.js"></script>
+	<script src="<?php echo $ruta;?>vendor/daterangepicker/moment.min.js"></script>
+	<script src="<?php echo $ruta;?>vendor/daterangepicker/daterangepicker.js"></script>
+	<script src="<?php echo $ruta;?>vendor/slick/slick.min.js"></script>
+	<script src="<?php echo $ruta;?>js/slick-custom.js"></script>
+	<script src="<?php echo $ruta;?>vendor/parallax100/parallax100.js"></script>
+	
 	<script>
         $('.parallax100').parallax100();
 	</script>
-<!--===============================================================================================-->
-	<script src="vendor/MagnificPopup/jquery.magnific-popup.min.js"></script>
+	
+	<script src="<?php echo $ruta;?>vendor/MagnificPopup/jquery.magnific-popup.min.js"></script>
 	<script>
 		$('.gallery-lb').each(function() { // the containers for all your galleries
 			$(this).magnificPopup({
@@ -190,10 +184,10 @@
 		    });
 		});
 	</script>
-<!--===============================================================================================-->
-	<script src="vendor/isotope/isotope.pkgd.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/sweetalert/sweetalert2.all.min.js"></script>
+	
+	<script src="<?php echo $ruta;?>vendor/isotope/isotope.pkgd.min.js"></script>
+	<script src="<?php echo $ruta;?>vendor/sweetalert/sweetalert2.all.min.js"></script>
+	
 	<script>
 		$('.js-addwish-b2').on('click', function(e){
 			e.preventDefault();
@@ -230,8 +224,8 @@
 		});
 	
 	</script>
-<!--===============================================================================================-->
-	<script src="vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+
+	<script src="<?php echo $ruta;?>vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
 	<script>
 		$('.js-pscroll').each(function(){
 			$(this).css('position','relative');
@@ -247,8 +241,8 @@
 			})
 		});
 	</script>
-<!--===============================================================================================-->
-	<script src="js/main.js"></script>
+	
+	<script src="<?php echo $ruta;?>js/main.js"></script>
 
 </body>
 </html>

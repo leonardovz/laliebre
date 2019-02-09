@@ -1,7 +1,7 @@
 <?php 
 $headerContent = "header-v4";
-include('views/header.php');
-include('php/addproduct.php');
+require_once 'views/header.php';
+require_once 'php/addproduct.php';
 ?>
     <section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('images/cuenta.png');">
 		<h2 class="ltext-105 cl0 txt-center">
@@ -38,4 +38,4 @@ include('php/addproduct.php');
 			</div>
 		</div>
 	</section>
-<?php include('views/footer.php');?>
+<?php require_once 'views/footer.php';?>

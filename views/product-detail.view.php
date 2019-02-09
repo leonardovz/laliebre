@@ -1,11 +1,11 @@
 <?php 
 $headerContent = "header-v4";
 $headerContentShadow = "how-shadow1";
-include('views/header.php');
-require 'php/showProduct.php';
+require_once 'views/header.php';
+require_once 'php/showProduct.php';
 ?>
     <?php 
-    $idProducto = $_GET['search'];
+    $idProducto = $rutas[1];
     $cardResult = buscarProducto($idProducto,$conexion);
     ?>
 	<!-- breadcrumb -->
@@ -43,11 +43,11 @@ require 'php/showProduct.php';
 							<div class="wrap-slick3-dots"></div>
 							<div class="wrap-slick3-arrows flex-sb-m flex-w"></div>
 							<div class="slick3 gallery-lb">
-								<div class="item-slick3" data-thumb="imagenes_a_subir/<?php echo $cardResult['imagen'];?>">
+								<div class="item-slick3" data-thumb="<?php echo $ruta.'imagenes_a_subir/'. $cardResult['imagen'];?>">
 									<div class="wrap-pic-w pos-relative">
-										<img src="imagenes_a_subir/<?php echo $cardResult['imagen'];?>" alt="IMG-PRODUCT">
+										<img src="<?php echo $ruta.'imagenes_a_subir/'. $cardResult['imagen'];?>" alt="IMG-PRODUCT">
 
-										<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="imagenes_a_subir/<?php echo $cardResult['imagen'];?>">
+										<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="<?php echo $ruta.'imagenes_a_subir/'. $cardResult['imagen'];?>">
 											<i class="fa fa-expand"></i>
 										</a>
 									</div>
@@ -105,15 +105,44 @@ require 'php/showProduct.php';
 					$descripcion= $post['Descripcion'];
 					$precio= $post['precio'];
 					$img= $post['imagen'];
-					$idCategoria = $post['id'];
+					$idCategoria = $post['idCategoria'];
 					$categoria = obtenerCategoria($idCategoria,$conexion);
-					$categoria = $categoria[0]['Nombre'];
-					Targeta($nombre,$descripcion,$precio,$img,$categoria,$idCategoria);
-				} 
-				?>
+					$categoria = $categoria[0]['Nombre'];?>
+					<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item <?php echo str_replace(' ', '', $categoria);?>">
+						<!-- Block2 -->
+						<div class="block2">
+							<div class="block2-pic hov-img0">
+								<img src="<?php echo $ruta.'imagenes_a_subir/'.$img;?>" alt="IMG-PRODUCT">
+
+								<a href="product-detail.php?search=<? echo $idcategoria;?>" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+									Vista Previa
+								</a>
+							</div>
+
+							<div class="block2-txt flex-w flex-t p-t-14">
+								<div class="block2-txt-child1 flex-col-l ">
+									<a href="product-detail.php" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+										<?php echo $nombre;?>
+									</a>
+
+									<span class="stext-105 cl3">
+									$ <?php echo $precio;?> MXN
+									</span>
+								</div>
+
+								<div class="block2-txt-child2 flex-r p-t-3">
+									<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
+										<img class="icon-heart1 dis-block trans-04" src="<?php echo $ruta;?>images/icons/icon-heart-01.png" alt="ICON">
+										<img class="icon-heart2 dis-block trans-04 ab-t-l" src="<?php echo $ruta;?>mages/icons/icon-heart-02.png" alt="ICON">
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				<?php } ?>
 				</div>
 			</div>
 		</div>
 	</section>
 		
-	<?php include('views/footer.php');?>
+	<?php require_once 'views/footer.php';?>

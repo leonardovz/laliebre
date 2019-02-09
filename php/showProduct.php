@@ -3,7 +3,7 @@
         <!-- Block2 -->
         <div class="block2">
             <div class="block2-pic hov-img0">
-                <img src="imagenes_a_subir/<?php echo $img;?>" alt="IMG-PRODUCT">
+                <img src="<?php echo 'http://localhost/modularv2/imagenes_a_subir/'.$img;?>" alt="IMG-PRODUCT">
 
                 <a href="product-detail.php?search=<? echo $idcategoria;?>" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
                     Vista Previa
@@ -23,8 +23,8 @@
 
                 <div class="block2-txt-child2 flex-r p-t-3">
                     <a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
-                        <img class="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png" alt="ICON">
-                        <img class="icon-heart2 dis-block trans-04 ab-t-l" src="images/icons/icon-heart-02.png" alt="ICON">
+                        <img class="icon-heart1 dis-block trans-04" src="http://localhost/modularv2/images/icons/icon-heart-01.png" alt="ICON">
+                        <img class="icon-heart2 dis-block trans-04 ab-t-l" src="http://localhost/modularv2/images/icons/icon-heart-02.png" alt="ICON">
                     </a>
                 </div>
             </div>

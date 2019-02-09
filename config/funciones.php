@@ -9,7 +9,7 @@ function limpiarDatos($datos){
 
 function conexion($bd_config){
 	try {
-		$conexion = new PDO('mysql:host='.$bd_config['host'].';dbname='.$bd_config['basedatos'], $bd_config['usuario'], $bd_config['pass']);
+		$conexion = new PDO('mysql:host='.$bd_config['host'].';dbname='.$bd_config['basedatos'], $bd_config['usuario'], $bd_config['pass'],array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES  \'UTF8\''));
 		return $conexion;
 	} catch (PDOException $e) {
 		return false;

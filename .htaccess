@@ -1,0 +1,21 @@
+# Impedir que se pueda ver el listado de contenidos de un directorio
+
+Options All -Indexes
+
+# Url Amigables
+
+RewriteEngine On
+
+RewriteRule ^([a-zA-Z0-9/]+)$ index.php?ruta=$1
+
+ErrorDocument 400 http://localhost/modularV2/errors
+
+ErrorDocument 401 http://localhost/modularV2/errors
+
+ErrorDocument 403 http://localhost/modularV2/errors
+
+ErrorDocument 404 http://localhost/modularV2/errors
+
+ErrorDocument 500 http://localhost/modularV2/errors
+
+ErrorDocument 503 http://localhost/modularV2/errors
