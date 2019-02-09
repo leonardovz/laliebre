@@ -10,7 +10,7 @@ $ubicacion = array(
 	'productos'=> 'productos',
 	'acercade'=> 'acercade',
 	'contacto'=> 'contacto',
-	'perfil'=> 'perfil',
+	'perfil'=> 'account',
 	'registros'=> 'registros'
 );
 

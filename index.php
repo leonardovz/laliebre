@@ -24,22 +24,22 @@ if(isset($_GET['ruta'])){
     $rutas = explode("/",$_GET['ruta']);
 
     if($rutas[0]==='tienda'){                    ////// TIENDA
-        require 'views/product.view.php';
+        require_once 'views/product.view.php';
     }
     elseif($rutas[0]==='productos'){            //////PRODUCTOS
-    require 'views/product-detail.view.php';
+        require_once 'views/product-detail.view.php';
     }
     elseif($rutas[0]==='acercade'){            //////ACERCA DE 
-    require 'views/acercade.php';
+        require_once 'views/acercade.php';
     }
     elseif($rutas[0]==='contacto'){            ////// CONTACTO
-    require 'views/contact.php';
+        require_once 'views/contact.php';
     }
-    elseif($rutas[0]==='perfil'){            ////// perfil
-    require 'views/account.php';
+    elseif($rutas[0]==='account' ){            ////// perfil
+        require_once 'administrador/index.php';
     }
     
-}else{                                          ////// INDEX
+}else{                                             ////// INDEX
      require_once 'views/index.view.php';
 }
 
