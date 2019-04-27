@@ -1,44 +1,64 @@
-//  $(obtener_registros());
+var ruta = ruta();
+$(document).ready(function() {
+    var Busqueda = $("#buscarProd").val();
+    var expresion = /^[a-zA-ZñÑ 0-9]*$/;
+    if(Busqueda == ""){
+        traerProductos();
+    }else{
+        buscarProductos(Busqueda);
+    }
+    $("#buscarProd").keypress(function(e) {
+        if(e.which == 13) {
+          var buscar = $(this).val();
+          if(!expresion.test(buscar)){
+            swal.fire("Evita ingresar caracteres especiales como lo son los acentos, las tildes etc");
+            }else{
+                window.location.replace(ruta+"tienda/"+buscar);
+                // buscarProductos(buscar);
+            }
+        }
+      });
+    $("#tiendabuscar").on('click',function(e) {
+        var buscar = $("#buscarProd").val();
+        if(!expresion.test(buscar)){
+            swal.fire("Evita ingresar caracteres especiales como lo son los acentos, las tildes etc");
+        }else{
+            window.location.replace(ruta+"tienda/"+buscar);
+            // buscarProductos(buscar);
+        }
+    });
+    
+    function traerProductos() {
+        var accion = 'principal',
+            actual = 0;
+        $.ajax({
+            url: ruta + 'php/mostrarProductos.php',
+            type: 'POST',
+            data: 'accion=' + accion + '&actual=' + actual,
+            error: function(xhr,status) {
+                $('#targeta').html(xhr);
+            },
+            success: function(resp) {
+                $('#targeta').before(resp);
+               
+            }
+        });
+    }
 
-//  function obtener_registros(productos)
-//  {
-// 	 $.ajax({
-// 		 url : 'php/busquedaProd.php',//Archivo donde Esta realizando la peticion
-//  		type : 'POST',//Metodo
-//  		dataType : 'html',//Documento que Envia los datos
-//  		data : { productos: productos },//Obtiene las Letras y Las manda en un objeto
-// 	})
-	
-// 	.done(function(resultado){
-// 		$("#Targeta").html(resultado);//Si se resuelve la peticion de Sevuelven los datos al lugar Especificado
-// 	});
-//  }
-// //Buscar al precionar cualquier tecla
-// // $(document).on('keypress', '#buscarProd', function()//Al precionar una tecla dentro de el input de texto
-// // {
-// // 	 var valorBusqueda=$(this).val();//Toma los valores
-// // 	 buscar(valorBusqueda);
-	 
-// // });
-
-// // Al precionar enter
-
-// $("#buscarProd").keypress(function(e) {
-// 	if(e.which == 13) {
-// 		var valorBusqueda=$(this).val();//Toma los valores
-// 		console.log(valorBusqueda);
-// 		buscar(valorBusqueda);
-// 	}
-//   });
-
-// function buscar(valorBusqueda){
-// 	if (valorBusqueda!=""){
-// 		obtener_registros(valorBusqueda);//Toma los valores y los envia a la funcion
-// 	}
-// 	else{
-// 	   obtener_registros();//No importa si no tiene registros
-//    }
-// }
-// function buscarCategoria(valorBusqueda){
-
-// }
+    function buscarProductos(buscar){
+        var accion = 'busqueda';
+            actual = 0;
+        $.ajax({
+            url: ruta + 'php/mostrarProductos.php',
+            type: 'POST',
+            data: 'accion=' + accion + '&actual=' + actual + '&busqueda=' + buscar,
+            error: function(xhr,status) {
+                $('#targeta').html(xhr);
+            },
+            success: function(resp) {
+                $('#targeta').html(resp);
+            }
+        });
+    }
+    
+});

@@ -1,22 +1,16 @@
-
-<!-- jQuery 3 -->
-
-<!-- Bootstrap 3.3.7 -->
-<script src="<?php echo $ruta;?>administrador/js/bootstrap.min.js"></script>
-<script src="<?php echo $ruta;?>administrador/js/sweetalert2.all.min.js"></script>
-<!-- SlimScroll -->
-<script src="<?php echo $ruta;?>administrador/js/jquery.slimscroll.min.js"></script>
-<!-- FastClick -->
-<script src="<?php echo $ruta;?>administrador/js/fastclick.js"></script>
-<!-- AdminLTE App -->
-<script src="<?php echo $ruta;?>administrador/js/adminlte.min.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="<?php echo $ruta;?>administrador/js/demo.js"></script>
-
-<script src="<?php echo $ruta;?>administrador/js/jquery.dataTables.min.js"></script>
-<script src="<?php echo $ruta;?>administrador/js/dataTables.bootstrap.min.js"></script>
-<script>
-  $(document).ready(function () {
-    $('.sidebar-menu').tree()
-  })
-</script>
+<script src="<?php echo $ruta;?>administrador/recursos/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="<?php echo $ruta;?>administrador/recursos/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="<?php echo $ruta;?>administrador/recursos/bower_components/select2/dist/js/select2.full.min.js"></script>
+<script src="<?php echo $ruta;?>administrador/recursos/plugins/input-mask/jquery.inputmask.js"></script>
+<script src="<?php echo $ruta;?>administrador/recursos/plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
+<script src="<?php echo $ruta;?>administrador/recursos/plugins/input-mask/jquery.inputmask.extensions.js"></script>
+<script src="<?php echo $ruta;?>administrador/recursos/bower_components/moment/min/moment.min.js"></script>
+<script src="<?php echo $ruta;?>administrador/recursos/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+<script src="<?php echo $ruta;?>administrador/recursos/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+<script src="<?php echo $ruta;?>administrador/recursos/bower_components/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js"></script>
+<script src="<?php echo $ruta;?>administrador/recursos/plugins/timepicker/bootstrap-timepicker.min.js"></script>
+<script src="<?php echo $ruta;?>administrador/recursos/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<script src="<?php echo $ruta;?>administrador/recursos/plugins/iCheck/icheck.min.js"></script>
+<script src="<?php echo $ruta;?>administrador/recursos/bower_components/fastclick/lib/fastclick.js"></script>
+<script src="<?php echo $ruta;?>administrador/recursos/dist/js/adminlte.min.js"></script>
+<script src="<?php echo $ruta;?>administrador/recursos/dist/js/demo.js"></script>

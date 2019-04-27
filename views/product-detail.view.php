@@ -3,9 +3,20 @@ $headerContent = "header-v4";
 $headerContentShadow = "how-shadow1";
 require_once 'views/header.php';
 require_once 'php/showProduct.php';
+// $conexion = conexion($bd_config);
+
+if(isset($_POST['cantidadProd'])){
+    $numeroProductos = $_POST['cantidadProd']+$galeria_config['post_por_pagina'];
+}else{
+    $numeroProductos = $galeria_config['post_por_pagina'];
+}
+$conexion = conexion($bd_config);
+$posts = obtener_post($numeroProductos, $conexion);
 ?>
-    <?php 
-    $idProducto = $rutas[1];
+	<?php 
+	
+	$idProducto = explode("-",$rutas[1]);
+	$idProducto = $idProducto[0];
     $cardResult = buscarProducto($idProducto,$conexion);
     ?>
 	<!-- breadcrumb -->
@@ -114,7 +125,7 @@ require_once 'php/showProduct.php';
 							<div class="block2-pic hov-img0">
 								<img src="<?php echo $ruta.'imagenes_a_subir/'.$img;?>" alt="IMG-PRODUCT">
 
-								<a href="product-detail.php?search=<? echo $idcategoria;?>" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+								<a href="<?php echo $ruta .$ubicacion['productos'].'/'.  $idCategoria;?>" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
 									Vista Previa
 								</a>
 							</div>

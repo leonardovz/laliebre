@@ -22,7 +22,14 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo $ruta;?>css/main.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo $ruta;?>css/estilos.css">
 	<link rel="stylesheet" href="<?php echo $ruta;?>vendor/sweetalert/sweetalert2.min.css">
-	<script src="<?php echo $ruta;?>vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script src="<?php echo $ruta;?>administrador/recursos/bower_components/jquery/dist/jquery.min.js"></script>
+	<script>
+	function ruta(){
+		var ruta = "<?php echo $ruta;?>";
+		return ruta;
+	}
+	</script>
+
 </head>
 <body class="animsition">
 	
@@ -38,7 +45,7 @@
 					</div>
 
 					<div class="right-top-bar flex-w h-full">
-						<a href="<?php echo $ruta. $ubicacion['perfil']?>" class="flex-c-m trans-04 p-lr-25">
+						<a href="<?php echo $ruta. $ubicacion['login']?>" class="flex-c-m trans-04 p-lr-25">
 							Cuenta
 						</a>
 					</div>
@@ -53,16 +60,16 @@
 					<!-- Menu desktop -->
 					<div class="menu-desktop">
 						<ul class="main-menu">
-							<li class="active-menu">
+							<li <?php if( !isset($rutas[0]) ) echo 'class="active-menu"'; ?>>
 								<a href="<?php echo $ruta.$ubicacion['index'];?>">Inicio</a>
 							</li>
-							<li class="label1" data-label1="Ofertas">
+							<li <?php echo ( isset($rutas[0]) && $rutas[0] == $ubicacion['tienda'])  ? 'class="active-menu label1"': 'class="label1"'; ?> data-label1="Ofertas">
 								<a href="<?php echo $ruta.$ubicacion['tienda'];?>">Tienda</a>
                             </li>
-                            <li class="">
+                            <li <?php echo ( isset($rutas[0]) && $rutas[0] == $ubicacion['acercade'])  ? 'class="active-menu"': ''; ?>>
 								<a href="<?php echo $ruta.$ubicacion['acercade'];?>">Acerca de</a>
 							</li>
-                            <li class="">
+                            <li <?php echo ( isset($rutas[0]) && $rutas[0] == $ubicacion['contacto'])  ? 'class="active-menu"': ''; ?>>
 								<a href="<?php echo $ruta.$ubicacion['contacto'];?>">Contactanos</a>
 							</li>
 						</ul>
