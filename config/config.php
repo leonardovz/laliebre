@@ -1,8 +1,4 @@
 <?php 
-$host="localhost";
-$database="laliebredb";
-$user="root";
-$pass="data1122";
 
 $bd_config = array(
     'host' => 'localhost',
@@ -10,12 +6,14 @@ $bd_config = array(
 	'usuario' => 'root',
 	'pass' => 'data1122'
 );
-$bd_epizy = array(
-    'host' => 'sql307.epizy.com',
-	'basedatos' => 'epiz_22918955_laliebredb',
-	'usuario' => 'epiz_22918955',
-	'pass' => 'kZjkeRW9QN7'
-);
+//Configuración de la web
+// $bd_config = array(
+//     'host'=>'localhost',
+//     'user'=>'hellomar_root',
+//     'database'=>'hellomar_sistema',
+//     'pass'=>'H3ll0M4rk3rt@'
+// );
+
 $galeria_config = array(
 	'post_por_pagina' => '8'
 );

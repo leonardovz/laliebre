@@ -1,7 +1,11 @@
 <?php 
 
+// function ruta(){
+//     return "http://localhost/modularv2/";
+// }
 function ruta(){
-    return "http://localhost/modularv2/";
+    $ruta = $_SERVER['HTTP_HOST'];
+    return 'http://'.$ruta.'/modularv2/';
 }
 
 $ubicacion = array(
