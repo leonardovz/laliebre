@@ -2,7 +2,6 @@
 $headerContent = "header-v4";
 $headerContentShadow = "how-shadow1";
 include('views/header.php');
-require 'php/showProduct.php';
 $conexion = conexion($bd_config);
 
 ?>
@@ -66,20 +65,22 @@ $conexion = conexion($bd_config);
 			<div id="targeta"></div>
 
 			<!-- Load more -->
-			<div class="flex-c-m flex-w w-full p-t-38">
-				<a href="#" class="flex-c-m how-pagination1 trans-04 m-all-7">
-					1
-				</a>
-
-				<a href="#" class="flex-c-m how-pagination1 trans-04 m-all-7 active-pagination1">
-					2
-				</a>
-			</div>
+			<form class="flex-c-m flex-w w-full p-t-45" id="traerMas" method="post">
+            	<button class="flex-c-m stext-101 cl5 size-103 bg2 bor1 hov-btn1 p-lr-15 trans-04" type="submit">Ver
+				más</button>
+		</form>
 		</div>
 	</div>
 	
 	
 	<?php require_once 'views/footer.php';?>
 	<script src="<?php echo $ruta;?>js/peticion.js"></script>
-    </body>
+	<script>
+		$(document).ready(function(){
+			$("#categorias").on('click',function(){
+				window.location.replace(<?php echo "'" . $ruta . $ubicacion['tienda'] . "'"?>);
+			})
+		});
+	</script>
+</body>
 </html>

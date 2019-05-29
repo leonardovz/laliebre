@@ -22,6 +22,33 @@
 
                 <div class="navbar-custom-menu">
                     <ul class="nav navbar-nav">
+                        <li class="dropdown messages-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-cart-arrow-down"></i>
+                            <span class="label label-success">4</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                            <li class="header">Carrito</li>
+                            <li>
+                                <ul class="menu">
+                                    <li>
+                                        <a href="#">
+                                        <div class="pull-left">
+                                            <img src="<?php echo $ruta;?>imagenes_a_subir/0750101312203M.jpg" class="img-circle" alt="User">
+                                        </div>
+                                        <h4>
+                                            Categoria
+                                            <small><i class="fa fa-clock-o"></i> 5</small>
+                                        </h4>
+                                        <p>Chelas para calor 700 ml</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="footer"><a href="#">See All Messages</a></li>
+                            </ul>
+                        </li>
+
                         <!-- Notifications: style can be found in dropdown.less -->
                         <li class="dropdown notifications-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">

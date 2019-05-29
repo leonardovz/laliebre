@@ -12,7 +12,8 @@ $ubicacion = array(
 	'contacto'=> 'contacto',
 	'perfil'=> 'account',
 	'registros'=> 'registros',
-	'login'=> 'login'
+	'login'=> 'login',
+	'carrito'=> 'carrito',
 );
 
 ?>

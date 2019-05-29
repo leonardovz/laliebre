@@ -53,6 +53,7 @@ function Categoria($conexion){
 /***************************************************** */
 function obtenerproductos($conexion,$accion,$busqueda,$actual){
 	$mostrados = 8;
+	$actual = $mostrados*$actual;
 	$sql="SELECT productos.*, categoria.Nombre as catNombre FROM `productos` INNER JOIN categoria ON productos.idCategoria = categoria.id WHERE idCategoria = 0";
 	switch ($accion) {
 		case 'principal':
@@ -66,7 +67,7 @@ function obtenerproductos($conexion,$accion,$busqueda,$actual){
 		break;
 	}
 	$respuesta= $conexion->query($sql);
-	if($respuesta){
+	if($respuesta->num_rows){
         return $respuesta;
     }else{
         return  false;

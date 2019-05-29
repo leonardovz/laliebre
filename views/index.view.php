@@ -1,8 +1,6 @@
 <?php 
 $headerContent = false;
 include('views/header.php');
-require 'php/addproduct.php';
-require 'php/showProduct.php';
 
 $conexion = conexion($bd_config);
 ?>
@@ -268,7 +266,7 @@ $conexion = conexion($bd_config);
 		
 
         <!-- Load more -->
-        <form class="flex-c-m flex-w w-full p-t-45" action="" method="post">
+        <form class="flex-c-m flex-w w-full p-t-45" id="traerMas" method="post">
             <input type="text" name="cantidadProd" value="<?php echo $numeroProductos;?>" hidden>
             <button class="flex-c-m stext-101 cl5 size-103 bg2 bor1 hov-btn1 p-lr-15 trans-04" type="submit">Ver
 				más</button>
@@ -277,38 +275,7 @@ $conexion = conexion($bd_config);
 </section>
 
 <!-- <script src="js/peticion.js"></script> -->
-<?php include_once('views/footer.php');?>
-
-<script>
-var ruta = ruta();
-$(document).ready(function() {
-	traerProductos();
-	$("#buscarProd").change(function(){
-		var buscar =$(this).val();
-		window.location.replace(ruta+"tienda/"+buscar);
-    });
-    
-    function traerProductos() {
-        var accion = 'principal',
-            actual = 0;
-        $.ajax({
-            url: ruta + 'php/mostrarProductos.php',
-            type: 'POST',
-            data: 'accion=' + accion + '&actual=' + actual,
-            error: function(xhr,status) {
-                $('#targeta').html(xhr);
-            },
-            success: function(resp) {
-                $('#targeta').before(resp);
-                // filtrado();
-            }
-        });
-    }
-
-});
-
-</script>
-
-
+<?php include_once ('views/footer.php');?>
+<script src="<?php echo $ruta;?>js/recursos/inicio.js"></script>
     </body>
 </html>

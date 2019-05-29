@@ -7,12 +7,10 @@
 
         <div class="error-content">
           <h3><i class="fa fa-warning text-red"></i> ¡Oops! <br> La pagina Solicitada no es Correcta</h3>
-
           <p>
             Busca algun producto o
              <a href="<?php echo $ruta;?>"> vuelve a la pagina de inicio</a> para continuar
           </p>
-
           <div id="FormBusqueda" class="search-form">
             <div class="input-group">
               <input type="text" name="search" id="search" class="form-control" placeholder="Search">

@@ -1,33 +1,32 @@
 <?php 
-$headerContent = "header-v4";
-$headerContentShadow = "how-shadow1";
-require_once 'views/header.php';
-require_once 'php/showProduct.php';
-// $conexion = conexion($bd_config);
+	$headerContent = "header-v4";
+	$headerContentShadow = "how-shadow1";
+	require_once 'views/header.php';
+	// $conexion = conexion($bd_config);
 
-if(isset($_POST['cantidadProd'])){
-    $numeroProductos = $_POST['cantidadProd']+$galeria_config['post_por_pagina'];
-}else{
-    $numeroProductos = $galeria_config['post_por_pagina'];
-}
-$conexion = conexion($bd_config);
-$posts = obtener_post($numeroProductos, $conexion);
+	if(isset($_POST['cantidadProd'])){
+		$numeroProductos = $_POST['cantidadProd']+$galeria_config['post_por_pagina'];
+	}else{
+		$numeroProductos = $galeria_config['post_por_pagina'];
+	}
+	$conexion = conexion($bd_config);
+	$posts = obtener_post($numeroProductos, $conexion);
 ?>
 	<?php 
 	
-	$idProducto = explode("-",$rutas[1]);
-	$idProducto = $idProducto[0];
-    $cardResult = buscarProducto($idProducto,$conexion);
+		$idProducto = explode("-",$rutas[1]);
+		$idProducto = $idProducto[0];
+		$cardResult = buscarProducto($idProducto,$conexion);
     ?>
 	<!-- breadcrumb -->
 	<div class="container">
 		<div class="bread-crumb flex-w p-l-25 p-r-15 p-t-30 p-lr-0-lg">
-			<a href="index.html" class="stext-109 cl8 hov-cl1 trans-04">
+			<a href="<?php echo $ruta;?>" class="stext-109 cl8 hov-cl1 trans-04">
 				INICIO
 				<i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
 			</a>
 
-			<a href="product.html" class="stext-109 cl8 hov-cl1 trans-04">
+			<a href="<?php echo $ruta.$ubicacion['tienda'];?>" class="stext-109 cl8 hov-cl1 trans-04">
                 <?php 
                 $categoria= $cardResult["idCategoria"];
                 $categoria = obtenerCategoria($categoria,$conexion);
@@ -57,7 +56,6 @@ $posts = obtener_post($numeroProductos, $conexion);
 								<div class="item-slick3" data-thumb="<?php echo $ruta.'imagenes_a_subir/'. $cardResult['imagen'];?>">
 									<div class="wrap-pic-w pos-relative">
 										<img src="<?php echo $ruta.'imagenes_a_subir/'. $cardResult['imagen'];?>" alt="IMG-PRODUCT">
-
 										<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="<?php echo $ruta.'imagenes_a_subir/'. $cardResult['imagen'];?>">
 											<i class="fa fa-expand"></i>
 										</a>

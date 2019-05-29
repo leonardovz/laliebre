@@ -42,7 +42,8 @@ if( isset($_POST['accion']) &&  isset($_POST['actual']) ){
                     <div class="block2-pic hov-img0">
                         <img src="<?php echo $ruta.'imagenes_a_subir/'.$img;?>" alt="IMG-PRODUCT">
 
-                        <a href="<?php echo $ruta .$ubicacion['productos'].'/'. $id;?>" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+                        <a href="<?php echo $ruta .$ubicacion['productos'].'/'. $id;?>"
+                            class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
                             Vista Previa
                         </a>
                     </div>
@@ -54,27 +55,32 @@ if( isset($_POST['accion']) &&  isset($_POST['actual']) ){
                             </a>
 
                             <span class="stext-105 cl3">
-                            $ <?php echo $precio;?> MXN
+                                $ <?php echo $precio;?> MXN
+                                <!-- <s style="color:red"> 
+                                                $ <?php //echo $precio;?> MXN
+                                        </s> -->
                             </span>
                         </div>
 
                         <div class="block2-txt-child2 flex-r p-t-3">
-                            <a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
-                                <img class="icon-heart1 dis-block trans-04" src="<?php echo $ruta;?>images/icons/icon-heart-01.png" alt="ICON">
-                                <img class="icon-heart2 dis-block trans-04 ab-t-l" src="<?php echo $ruta;?>images/icons/icon-heart-02.png" alt="ICON">
-                            </a>
+                            <button class="btn-addwish-b2 dis-block pos-relative js-addwish-b2 producto-carrito"
+                                idproducto="<?php echo $id;?>" nombre="<?php echo $nombre;?>" precio="<?php echo $precio;?>"
+                                imagen="<?php echo $img;?>">
+                                <img class="icon-heart1 dis-block trans-04" src="<?php echo $ruta;?>images/icons/icon-heart-01.png"
+                                    alt="ICON">
+                                <img class="icon-heart2 dis-block trans-04 ab-t-l"
+                                    src="<?php echo $ruta;?>images/icons/icon-heart-02.png" alt="ICON">
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
-        <?php } 
-        echo '</div>';
-    }else{
-        echo "no hay respuesta";
+<?php   } 
+echo '</div>';
     }
 }
 else {
-    echo "no hay datos";
+    // echo "no hay datos";
 }
 
 ?>
