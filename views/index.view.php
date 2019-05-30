@@ -8,7 +8,7 @@ $conexion = conexion($bd_config);
 <section class="section-slide">
     <div class="wrap-slick1">
         <div class="slick1">
-            <div class="item-slick1" style="background-image: url(images/slide-01.png);">
+            <div class="item-slick1" style="background-image: url(<?php echo $ruta;?>images/slide-01.png);">
                 <div class="container h-full">
                     <div class="flex-col-l-m h-full p-t-100 p-b-30 respon5">
                         <div class="layer-slick1 animated visible-false" data-appear="fadeInDown" data-delay="0">
@@ -32,7 +32,7 @@ $conexion = conexion($bd_config);
                     </div>
                 </div>
             </div>
-            <div class="item-slick1" style="background-image: url(images/slide-02.png);">
+            <div class="item-slick1" style="background-image: url(<?php echo $ruta;?>images/slide-02.png);">
                 <div class="container h-full">
                     <div class="flex-col-l-m h-full p-t-100 p-b-30 respon5">
                         <div class="layer-slick1 animated visible-false" data-appear="rollIn" data-delay="0">
@@ -56,7 +56,7 @@ $conexion = conexion($bd_config);
                     </div>
                 </div>
             </div>
-            <div class="item-slick1" style="background-image: url(images/slide-03.png);">
+            <div class="item-slick1" style="background-image: url(<?php echo $ruta;?>images/slide-03.png);">
                 <div class="container h-full">
                     <div class="flex-col-l-m h-full p-t-100 p-b-30 respon5">
                         <div class="layer-slick1 animated visible-false" data-appear="rotateInDownLeft" data-delay="0">
@@ -80,7 +80,7 @@ $conexion = conexion($bd_config);
                     </div>
                 </div>
             </div>
-            <div class="item-slick1" style="background-image: url(images/slide-04.png);">
+            <div class="item-slick1" style="background-image: url(<?php echo $ruta;?>images/slide-04.png);">
                 <div class="container h-full">
                     <div class="flex-col-l-m h-full p-t-100 p-b-30 respon5">
                         <div class="layer-slick1 animated visible-false" data-appear="rotateInDownLeft" data-delay="0">
@@ -104,7 +104,7 @@ $conexion = conexion($bd_config);
                     </div>
                 </div>
             </div>
-            <div class="item-slick1" style="background-image: url(images/slide-05.png);">
+            <div class="item-slick1" style="background-image: url(<?php echo $ruta;?>images/slide-05.png);">
                 <div class="container h-full">
                     <div class="flex-col-l-m h-full p-t-100 p-b-30 respon5">
                         <div class="layer-slick1 animated visible-false" data-appear="rotateInDownLeft" data-delay="0">
@@ -128,7 +128,7 @@ $conexion = conexion($bd_config);
                     </div>
                 </div>
             </div>
-            <div class="item-slick1" style="background-image: url(images/slide-06.png);">
+            <div class="item-slick1" style="background-image: url(<?php echo $ruta;?>images/slide-06.png);">
                 <div class="container h-full">
                     <div class="flex-col-l-m h-full p-t-100 p-b-30 respon5">
                         <div class="layer-slick1 animated visible-false" data-appear="rotateInDownLeft" data-delay="0">
@@ -152,7 +152,7 @@ $conexion = conexion($bd_config);
                     </div>
                 </div>
             </div>
-            <div class="item-slick1" style="background-image: url(images/slide-07.png);">
+            <div class="item-slick1" style="background-image: url(<?php echo $ruta;?>images/slide-07.png);">
                 <div class="container h-full">
                     <div class="flex-col-l-m h-full p-t-100 p-b-30 respon5">
                         <div class="layer-slick1 animated visible-false" data-appear="rotateInDownLeft" data-delay="0">
@@ -176,7 +176,7 @@ $conexion = conexion($bd_config);
                     </div>
                 </div>
             </div>
-            <div class="item-slick1" style="background-image: url(images/slide-08.png);">
+            <div class="item-slick1" style="background-image: url(<?php echo $ruta;?>images/slide-08.png);">
                 <div class="container h-full">
                     <div class="flex-col-l-m h-full p-t-100 p-b-30 respon5">
                         <div class="layer-slick1 animated visible-false" data-appear="rotateInDownLeft" data-delay="0">
