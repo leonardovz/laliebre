@@ -1,4 +1,4 @@
-<?php include_once ('templates/header.php');?>
+<?php include_once ('administrador/templates/header.php');?>
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
@@ -41,7 +41,7 @@
   </div>
   <!-- /.login-box-body -->
 </div>
-<?php include_once ('templates/footer.php');?>
+<?php include_once ('administrador/templates/footer.php');?>
 <script>
   $(function () {
     $('input').iCheck({

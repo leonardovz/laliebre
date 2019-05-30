@@ -1,7 +1,7 @@
-<?php include_once ('templates/header.php');?>
+<?php include_once ('administrador/templates/header.php');?>
 
 
-<?php include_once ('templates/header.view.php');?>
+<?php include_once ('administrador/templates/header.view.php');?>
 
 
 <!-- Content Wrapper. Contains page content -->
@@ -434,7 +434,7 @@
 
 </div>
 
-<?php include_once('templates/footer.php');?>
+<?php include_once('administrador/templates/footer.php');?>
 <script>
 $(document).ready(function() {
     //Initialize Select2 Elements

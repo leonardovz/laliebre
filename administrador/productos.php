@@ -1,7 +1,7 @@
-<?php include_once ('templates/header.php');?>
+<?php include_once ('administrador/templates/header.php');?>
 
 
-<?php include_once ('templates/header.view.php');?>
+<?php include_once ('administrador/templates/header.view.php');?>
 
 
 <!-- Content Wrapper. Contains page content -->
