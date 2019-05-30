@@ -64,7 +64,9 @@
 </script>
 
 </head>
-<body >
+<body class="animsition">
+	
+	<!-- Header -->
 	<header <?php if ($headerContent) echo 'class='.$headerContent.'';?>>
 		<!-- Header desktop -->
 		<div class="container-menu-desktop">
