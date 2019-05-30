@@ -120,7 +120,7 @@
 		<div class="wrap-header-mobile">
 			<!-- Logo moblie -->		
 			<div class="logo-mobile">
-				<a href="<?php echo $ruta;?>"><img src="images/icons/logo-01.png" alt="IMG-LOGO"></a>
+				<a href="<?php echo $ruta;?>"><img src="<?php echo $ruta;?>images/icons/logo-01.png" alt="IMG-LOGO"></a>
 			</div>
 			<!-- Button show menu -->
 			<div class="btn-show-menu-mobile hamburger hamburger--squeeze">
