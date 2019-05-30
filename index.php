@@ -1,8 +1,8 @@
 <?php 
 
-require 'config/config.php';
-require 'config/funciones.php';
-require 'config/rutas.php';
+require_once 'config/config.php';
+require_once 'config/funciones.php';
+require_once 'config/rutas.php';
 
 $ruta = ruta();
 if(isset($_GET['ruta'])){

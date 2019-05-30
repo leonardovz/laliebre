@@ -9,9 +9,9 @@ $bd_config = array(
 //Configuración de la web
 // $bd_config = array(
 //     'host'=>'localhost',
-//     'user'=>'hellomar_root',
-//     'database'=>'hellomar_sistema',
-//     'pass'=>'H3ll0M4rk3rt@'
+//     'usuario'=>'hellomar_helloma',
+//     'basedatos'=>'hellomar_sistema',
+//     'pass'=>'sW-U47rUC+c]'
 // );
 
 $galeria_config = array(
