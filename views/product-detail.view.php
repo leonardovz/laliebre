@@ -1,7 +1,7 @@
 <?php 
 	$headerContent = "header-v4";
 	$headerContentShadow = "how-shadow1";
-	require_once 'views/header.php';
+	require_once 'templates/header.php';
 	// $conexion = conexion($bd_config);
 
 	if(isset($_POST['cantidadProd'])){
@@ -154,4 +154,4 @@
 		</div>
 	</section>
 		
-	<?php require_once 'views/footer.php';?>
+	<?php require_once 'templates/footer.php';?>

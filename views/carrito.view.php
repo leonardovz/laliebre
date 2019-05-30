@@ -1,6 +1,6 @@
 <?php 
 $headerContent = false;
-include('views/header.php');
+include('templates/header.php');
 
 $conexion = conexion($bd_config);
 ?>
@@ -86,7 +86,7 @@ $conexion = conexion($bd_config);
 </form>
 		
 
-<?php include_once('views/footer.php');?>
+<?php include_once('templates/footer.php');?>
 
     </body>
 </html>

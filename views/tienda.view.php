@@ -1,7 +1,7 @@
 <?php 
 $headerContent = "header-v4";
 $headerContentShadow = "how-shadow1";
-include('views/header.php');
+include('templates/header.php');
 $conexion = conexion($bd_config);
 
 ?>
@@ -73,7 +73,7 @@ $conexion = conexion($bd_config);
 	</div>
 	
 	
-	<?php require_once 'views/footer.php';?>
+	<?php require_once 'templates/footer.php';?>
 	<script src="<?php echo $ruta;?>js/peticion.js"></script>
 	<script>
 		$(document).ready(function(){

@@ -1,7 +1,7 @@
 <?php 
 $headerContent = "header-v4";
 $headerContentShadow = "how-shadow1";
-include('views/header.php');
+include('templates/header.php');
 include('modificar/tablas.php');
 require 'php/showProduct.php';
 
@@ -35,4 +35,4 @@ $productos = allProductos($conexion);
 		</div>
 	</div>
 <script src="js/delproducts.js"></script>
-<?php include('views/footer.php');?>
+<?php include('templates/footer.php');?>

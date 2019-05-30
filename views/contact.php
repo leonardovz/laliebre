@@ -1,7 +1,7 @@
 <?php 
 $headerContent = "header-v4";
 $headerContentShadow = "how-shadow1";
-include('views/header.php')?>
+include('templates/header.php')?>
 
 	<!-- Title page -->
 	<section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('images/bg-01.jpg');">
@@ -99,4 +99,4 @@ include('views/header.php')?>
 		</div>
 	</div>
 	
-	<?php include('views/footer.php');?>
+	<?php include('templates/footer.php');?>

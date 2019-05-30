@@ -1,6 +1,6 @@
 <?php 
 $headerContent = false;
-include('views/header.php');
+include('templates/header.php');
 
 $conexion = conexion($bd_config);
 ?>
@@ -275,7 +275,7 @@ $conexion = conexion($bd_config);
 </section>
 
 <!-- <script src="js/peticion.js"></script> -->
-<?php include_once ('views/footer.php');?>
+<?php include_once ('templates/footer.php');?>
 <script src="<?php echo $ruta;?>js/recursos/inicio.js"></script>
     </body>
 </html>
