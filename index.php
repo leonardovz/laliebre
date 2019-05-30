@@ -23,21 +23,21 @@ if(isset($_GET['ruta'])){
     elseif($rutas[0]==='carrito'){             ////// CONTACTO
         require_once 'views/carrito.view.php';
     }
-    // elseif($rutas[0]===$ubicacion['perfil'] ){  ////// perfil
-    //     if( isset($rutas[1]) && !empty($rutas[1]) ){
-    //         if($rutas[1]=='productos'){
-    //             require_once 'administrador/productos.php';
-    //         }
-    //         elseif($rutas[1]=='usuarios'){
-    //             require_once 'administrador/cuenta.php';
-    //         }
-    //         else{
-    //             require_once 'error.php';
-    //         }
-    //     }else{
-    //         require_once 'administrador/index.php';
-    //     }
-    // }
+    elseif($rutas[0]===$ubicacion['perfil'] ){  ////// perfil
+        if( isset($rutas[1]) && !empty($rutas[1]) ){
+            if($rutas[1]=='productos'){
+                require_once 'administrador/productos.php';
+            }
+            elseif($rutas[1]=='usuarios'){
+                require_once 'administrador/cuenta.php';
+            }
+            else{
+                require_once 'error.php';
+            }
+        }else{
+            require_once 'administrador/index.php';
+        }
+    }
 
     elseif($rutas[0]==='login' ){               ////// perfil
         
