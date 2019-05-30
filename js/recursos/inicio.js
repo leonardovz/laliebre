@@ -1,6 +1,5 @@
 var ruta = ruta();
 $(document).ready(function() {
-	
 	$("#buscarProd").change(function(){
 		var buscar =$(this).val();
 		window.location.replace(ruta+"tienda/"+buscar);
@@ -71,4 +70,5 @@ $(document).ready(function() {
             localStorage.setItem("listaProductos",JSON.stringify(listaCarrito) );
         });
     }
+    
 });

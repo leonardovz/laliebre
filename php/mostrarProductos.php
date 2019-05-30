@@ -66,10 +66,8 @@ if( isset($_POST['accion']) &&  isset($_POST['actual']) ){
                             <button class="btn-addwish-b2 dis-block pos-relative js-addwish-b2 producto-carrito"
                                 idproducto="<?php echo $id;?>" nombre="<?php echo $nombre;?>" precio="<?php echo $precio;?>"
                                 imagen="<?php echo $img;?>">
-                                <img class="icon-heart1 dis-block trans-04" src="<?php echo $ruta;?>images/icons/icon-heart-01.png"
-                                    alt="ICON">
-                                <img class="icon-heart2 dis-block trans-04 ab-t-l"
-                                    src="<?php echo $ruta;?>images/icons/icon-heart-02.png" alt="ICON">
+                                <img class="icon-heart1 dis-block trans-04" src="<?php echo $ruta;?>images/icons/icon-heart-01.png"alt="ICON">
+                                <img class="icon-heart2 dis-block trans-04 ab-t-l"src="<?php echo $ruta;?>images/icons/icon-hart-02.png" alt="ICON">
                             </button>
                         </div>
                     </div>

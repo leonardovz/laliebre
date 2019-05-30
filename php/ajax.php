@@ -4,7 +4,7 @@ require_once '../config/config.php';
 require_once '../config/funciones.php';
 require_once '../config/rutas.php';
 
-    $conexion = conexion($bd_config);
+    $conexion = conexionSQLI($bd_config);
 
 if (!$conexion) {
     $respuesta = array(

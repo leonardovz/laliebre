@@ -95,7 +95,7 @@ $(document).ready(function() {
     /**////////////////////////////////////////////*/
     /**/////////////CARRITO DE COMPRAS ////////////*/
     /**/////////////////////////////// ////////////*/
-
+    
     var listaCarrito;
     if(localStorage.getItem('listaProductos') != null ){
         listaCarrito = JSON.parse(localStorage.getItem('listaProductos'));
@@ -112,6 +112,7 @@ $(document).ready(function() {
             listaCarrito.push({"idproducto": idproducto, "nombre": nombre, "precio": precio, "imagen": imagen});
             console.log(listaCarrito);
             localStorage.setItem("listaProductos",JSON.stringify(listaCarrito) );
+            swal(nombre, "Añadido a tu carrito de compras", "success");
         });
     }
     

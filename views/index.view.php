@@ -8,6 +8,8 @@ $conexion = conexion($bd_config);
 <section class="section-slide">
     <div class="wrap-slick1">
         <div class="slick1">
+
+                <!-- ///////////********   Panaderia     *********//////////////// -->
             <div class="item-slick1" style="background-image: url(<?php echo $ruta;?>images/slide-01.png);">
                 <div class="container h-full">
                     <div class="flex-col-l-m h-full p-t-100 p-b-30 respon5">
@@ -24,7 +26,7 @@ $conexion = conexion($bd_config);
                         </div>
 
                         <div class="layer-slick1 animated visible-false" data-appear="zoomIn" data-delay="1600">
-                            <a href="product.php"
+                            <a href="<?php echo $ruta,$ubicacion['tienda'].'/';?>panaderia"
                                 class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
                                 Encontrar Productos
                             </a>
@@ -32,6 +34,7 @@ $conexion = conexion($bd_config);
                     </div>
                 </div>
             </div>
+                <!-- ///////////********   Vinos y licores     *********//////////////// -->
             <div class="item-slick1" style="background-image: url(<?php echo $ruta;?>images/slide-02.png);">
                 <div class="container h-full">
                     <div class="flex-col-l-m h-full p-t-100 p-b-30 respon5">
@@ -48,7 +51,7 @@ $conexion = conexion($bd_config);
                         </div>
 
                         <div class="layer-slick1 animated visible-false" data-appear="slideInUp" data-delay="1600">
-                            <a href="product.php"
+                            <a href="<?php echo $ruta,$ubicacion['tienda'].'/';?>vinos-y-licores"
                                 class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
                                 Encontrar Productos
                             </a>
@@ -56,6 +59,7 @@ $conexion = conexion($bd_config);
                     </div>
                 </div>
             </div>
+                <!-- ///////////********     Postres   *********//////////////// -->
             <div class="item-slick1" style="background-image: url(<?php echo $ruta;?>images/slide-03.png);">
                 <div class="container h-full">
                     <div class="flex-col-l-m h-full p-t-100 p-b-30 respon5">
@@ -72,7 +76,7 @@ $conexion = conexion($bd_config);
                         </div>
 
                         <div class="layer-slick1 animated visible-false" data-appear="rotateIn" data-delay="1600">
-                            <a href="product.php"
+                            <a href="<?php echo $ruta,$ubicacion['tienda'].'/';?>postres"
                                 class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
                                 Encontrar Productos
                             </a>
@@ -80,6 +84,7 @@ $conexion = conexion($bd_config);
                     </div>
                 </div>
             </div>
+                <!-- ///////////********    verduras    *********//////////////// -->
             <div class="item-slick1" style="background-image: url(<?php echo $ruta;?>images/slide-04.png);">
                 <div class="container h-full">
                     <div class="flex-col-l-m h-full p-t-100 p-b-30 respon5">
@@ -96,7 +101,7 @@ $conexion = conexion($bd_config);
                         </div>
 
                         <div class="layer-slick1 animated visible-false" data-appear="rotateIn" data-delay="1600">
-                            <a href="product.php"
+                            <a href="<?php echo $ruta,$ubicacion['tienda'].'/';?>verduras"
                                 class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
                                 Encontrar Productos
                             </a>
@@ -104,6 +109,8 @@ $conexion = conexion($bd_config);
                     </div>
                 </div>
             </div>
+                <!-- ///////////********    fruteria    *********//////////////// -->
+
             <div class="item-slick1" style="background-image: url(<?php echo $ruta;?>images/slide-05.png);">
                 <div class="container h-full">
                     <div class="flex-col-l-m h-full p-t-100 p-b-30 respon5">
@@ -120,7 +127,7 @@ $conexion = conexion($bd_config);
                         </div>
 
                         <div class="layer-slick1 animated visible-false" data-appear="rotateIn" data-delay="1600">
-                            <a href="product.php"
+                            <a href="<?php echo $ruta,$ubicacion['tienda'].'/';?>fruteria"
                                 class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
                                 Encontrar Productos
                             </a>
@@ -128,6 +135,7 @@ $conexion = conexion($bd_config);
                     </div>
                 </div>
             </div>
+                <!-- ///////////********    frutas-y-verduras    *********//////////////// -->
             <div class="item-slick1" style="background-image: url(<?php echo $ruta;?>images/slide-06.png);">
                 <div class="container h-full">
                     <div class="flex-col-l-m h-full p-t-100 p-b-30 respon5">
@@ -144,7 +152,7 @@ $conexion = conexion($bd_config);
                         </div>
 
                         <div class="layer-slick1 animated visible-false" data-appear="rotateIn" data-delay="1600">
-                            <a href="product.php"
+                            <a href="<?php echo $ruta,$ubicacion['tienda'].'/';?>frutas-y-verduras"
                                 class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
                                 Encontrar Productos
                             </a>
@@ -152,6 +160,7 @@ $conexion = conexion($bd_config);
                     </div>
                 </div>
             </div>
+                <!-- ///////////********    botanas    *********//////////////// -->
             <div class="item-slick1" style="background-image: url(<?php echo $ruta;?>images/slide-07.png);">
                 <div class="container h-full">
                     <div class="flex-col-l-m h-full p-t-100 p-b-30 respon5">
@@ -168,7 +177,7 @@ $conexion = conexion($bd_config);
                         </div>
 
                         <div class="layer-slick1 animated visible-false" data-appear="rotateIn" data-delay="1600">
-                            <a href="product.php"
+                            <a href="<?php echo $ruta,$ubicacion['tienda'].'/';?>botanas"
                                 class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
                                 Encontrar Productos
                             </a>
@@ -176,6 +185,7 @@ $conexion = conexion($bd_config);
                     </div>
                 </div>
             </div>
+                <!-- ///////////********        *********//////////////// -->
             <div class="item-slick1" style="background-image: url(<?php echo $ruta;?>images/slide-08.png);">
                 <div class="container h-full">
                     <div class="flex-col-l-m h-full p-t-100 p-b-30 respon5">
@@ -192,7 +202,7 @@ $conexion = conexion($bd_config);
                         </div>
 
                         <div class="layer-slick1 animated visible-false" data-appear="rotateIn" data-delay="1600">
-                            <a href="product.php"
+                            <a href="<?php echo $ruta,$ubicacion['tienda'].'/';?>vinos-y-licores"
                                 class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
                                 Encontrar Productos
                             </a>
@@ -204,7 +214,7 @@ $conexion = conexion($bd_config);
     </div>
 </section>
 <!-- Product -->
-<section class="bg0 p-t-23 p-b-140">
+<section class="bg0 p-t-23 p-b-140" id="slider">
     <div class="container">
         <div class="p-b-10">
             <h3 class="ltext-103 cl5">
@@ -250,7 +260,7 @@ $conexion = conexion($bd_config);
                             <?php $categoriasD = traerCategorias($conexion);?>
                             <?php foreach ($categoriasD as $categoriaD): ?>
                             <li class="p-b-6">
-                                <a href="<?php echo $ruta.$ubicacion['tienda'].'/'.str_replace(' ', '', $categoriaD['Nombre']);?>"
+                                <a href="<?php echo $ruta.$ubicacion['tienda'].'/'.'/'.str_replace(' ', '', $categoriaD['Nombre']);?>"
                                     class="filter-link stext-106 trans-04">
                                     <?php echo $categoriaD['Nombre'];?>
                                 </a>

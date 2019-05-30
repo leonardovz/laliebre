@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Hello Market | Super Mercado La liebre</title>
+	<title>Hello Market | Super Mercado La liebre | Jalostotitlan</title>
 	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 	<meta http-equiv="Cache-control" content="no-cache">
 	<meta http-equiv="Pragma" content="no-cache">
