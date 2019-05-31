@@ -101,7 +101,11 @@ function traerCategoriasSQLI($conexion){
 	$resultado = $conexion->query($sql);
     return ($resultado->num_rows) ? true : false;
 }
-
+function traerProdRelacionados($conexion,$categoria,$inicio,$limite){
+	$sql="SELECT p.id, p.Nombre, p.Descripcion, p.imagen, p.idCategoria, c.Nombre AS catNombre, p.precio, p.fecha, p.idUsuario, p.estado FROM productos p INNER JOIN categoria c ON c.id = p.idCategoria WHERE p.idCategoria = $categoria LIMIT ".(($inicio) ? " $inicio,":"")."$limite";
+	$resultado = $conexion->query($sql);
+    return ($resultado->num_rows) ? $resultado : false;
+}
 
 /***************************************************** */
 /***************************************************** */

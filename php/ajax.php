@@ -14,18 +14,16 @@ if (!$conexion) {
     die(json_encode($respuesta));
 }
 
- $_POST['opcion']="cargarCategorias";
+ $_POST['opcion']="prodRelacionado";
+ $_POST['idCategoria']=1;
 $ruta = ruta(); //Usamos la ruta absoluta para no tener conflicto con las direcciones
 if(!isset($_POST['opcion'])){
-    echo '<script>window.location.replace("' . $ruta . '");</script>';
-    die();
+    // echo '<script>window.location.replace("' . $ruta . '");</script>';
+    // die();
 }
 switch ($_POST['opcion']) {
-    case 'cargarCategorias':
-        $Categorias= traerCategorias($conexion);
-        foreach ($Categorias as $categoria) {
-            MostrarCategorias($categoria['Nombre']);
-        }
+    case 'prodRelacionado':
+        
     break;
 }
 

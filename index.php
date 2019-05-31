@@ -4,10 +4,11 @@ require_once 'config/config.php';
 require_once 'config/funciones.php';
 require_once 'config/rutas.php';
 
-$ruta = ruta();
+$ruta = ruta();//Obtenngo una variable ruta donde me da la URL de el Sitio, para que sea siempre ruta absoluta
 if(isset($_GET['ruta'])){
-    $rutas = explode("/",$_GET['ruta']);
-
+    //Separo la Ruta y la convierto en un arrelo para declarar cuales son las URIS amigables
+    $rutas = explode("/",$_GET['ruta']); 
+    //cada condicional se hace cargo de traer la vista necesaria o la que esta solicitando el cliente
     if($rutas[0]==='tienda'){                    ////// TIENDA
         require_once 'views/tienda.view.php';
     }
@@ -38,7 +39,6 @@ if(isset($_GET['ruta'])){
             require_once 'administrador/index.php';
         }
     }
-
     elseif($rutas[0]==='login' ){               ////// perfil
         
         require_once 'administrador/login.php';
