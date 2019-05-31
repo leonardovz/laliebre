@@ -4,20 +4,21 @@ $headerContentShadow = "how-shadow1";
 include('templates/header.php')?>
 
 	<!-- Title page -->
-	<section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('images/bg-01.jpg');">
+	<!-- <section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('<?php echo $ruta;?>images/qr_img.png');">
 		<h2 class="ltext-105 cl0 txt-center">
 			Contacto
 		</h2>
-	</section>	
+	</section>	 -->
 
 
 	<!-- Content page -->
 	<section class="bg0 p-t-104 p-b-116">
 		<div class="container">
+			
 			<div class="flex-w flex-tr">
 				<div class="size-210 bor10 p-lr-70 p-t-55 p-b-70 p-lr-15-lg w-full-md">
 					<form>
-						<h4 class="mtext-105 cl2 txt-center p-b-30">
+						<!-- <h4 class="mtext-105 cl2 txt-center p-b-30">
 							Enviar un Mensaje
 						</h4>
 
@@ -29,10 +30,13 @@ include('templates/header.php')?>
 						<div class="bor8 m-b-30">
 							<textarea class="stext-111 cl2 plh3 size-120 p-lr-28 p-tb-25" name="msg" placeholder="Dudas o Aclaraciones"></textarea>
 						</div>
-
+						
 						<button class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer">
 							Enviar
-						</button>
+						</button> -->
+						<div class="bor8 m-b-30">
+							<img src ="<?php echo $ruta;?>images/qr_img.png" class="img-responsive" alt="Responsive image">
+						</div>
 					</form>
 				</div>
 
@@ -48,7 +52,7 @@ include('templates/header.php')?>
 							</span>
 
 							<p class="stext-115 cl6 size-213 p-t-18">
-								Coza Store Center 8th floor, 379 Hudson St, New York, NY 10018 US
+								Rio papaloapan #13	
 							</p>
 						</div>
 					</div>
@@ -64,7 +68,7 @@ include('templates/header.php')?>
 							</span>
 
 							<p class="stext-115 cl1 size-213 p-t-18">
-								+1 800 1236879
+								<a href="tel:431-746-0233">+52 1 (431-746-0233)</a>
 							</p>
 						</div>
 					</div>
@@ -80,11 +84,20 @@ include('templates/header.php')?>
 							</span>
 
 							<p class="stext-115 cl1 size-213 p-t-18">
-								contact@example.com
+								<a href="mailto:superlaliebre@gmail.com">superlaliebre@gmail.com</a>
 							</p>
 						</div>
 					</div>
+					<!-- <div class="flex-w w-full" style="width: 40%;">
+						<img src ="<?php //echo $ruta;?>images/qr_img.png" class="img-responsive" alt="Responsive image">
+					</div> -->
 				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-2">
+					
+				</div>
+				
 			</div>
 		</div>
 	</section>	
