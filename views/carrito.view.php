@@ -10,10 +10,10 @@ $conexion = conexion($bd_config);
 <br>
 <br>
 <br>
-<form class="bg0 p-t-75 p-b-85">
+<div class="bg0 p-t-75 p-b-85">
     <div class="container">
         <div class="row">
-            <div class="col-lg-10 col-xl-7 m-lr-auto m-b-50">
+            <form class="col-lg-10 col-xl-7 m-lr-auto m-b-50">
                 <div class="m-l-25 m-r--38 m-lr-0-xl">
                     <div class="wrap-table-shopping-cart">
                         <table class="table-shopping-cart">
@@ -76,14 +76,24 @@ $conexion = conexion($bd_config);
                     </div>
 
                 </div>
-            </div>
+            </form>
 
             <div class="col-sm-10 col-lg-7 col-xl-5 m-lr-auto m-b-50">
-                
+                <div class="bor10 p-lr-40 p-t-30 p-b-40 m-l-63 m-r-40 m-lr-0-xl p-lr-15-sm">
+                    <h4 class="mtext-109 cl2 p-b-30">
+                        ¡Atento!
+                    </h4>
+                    <p class="stext-111 cl6 p-t-2">
+                        Los precios de los productos ofrecidos en esta Tienda Online pueden tener variaciones mínimas de precio en cuanto a la tienda física de la empresa Supermercado La Liebre. <br> En caso de pedidos, puede haber variación en precios si los productos no son recogidos en un lapso de <strong>6hrs</strong> .                    </p>
+                    <br>
+                    <button class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer">
+                        Imprimir mi Lista de Compras
+                    </button>
+                </div>
             </div>
         </div>
     </div>
-</form>
+</div>
 		
 
 <?php include_once('templates/footer.php');?>
