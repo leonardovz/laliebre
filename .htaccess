@@ -5,6 +5,7 @@ Options All -Indexes
 ## Url Amigables
 
 RewriteEngine On
+<<<<<<< HEAD
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
@@ -18,3 +19,18 @@ ErrorDocument 403 https://hellomarket.com.mx/errors
 ErrorDocument 404 https://hellomarket.com.mx/errors
 ErrorDocument 500 https://hellomarket.com.mx/errors
 ErrorDocument 503 https://hellomarket.com.mx/errors
+=======
+#RewriteCond %{HTTPS} off
+#RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+##
+##
+##
+RewriteRule ^([a-zA-Z0-9/-]+)$ index.php?ruta=$1
+##
+#ErrorDocument 400 https://hellomarket.com.mx/errors
+#ErrorDocument 401 https://hellomarket.com.mx/errors
+#ErrorDocument 403 https://hellomarket.com.mx/errors
+#ErrorDocument 404 https://hellomarket.com.mx/errors
+#ErrorDocument 500 https://hellomarket.com.mx/errors
+#ErrorDocument 503 https://hellomarket.com.mx/errors
+>>>>>>> ac72966839a5f74742d3349d5c332f1679f7e3d8
