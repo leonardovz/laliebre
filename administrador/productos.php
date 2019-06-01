@@ -52,9 +52,7 @@
                             <div class="col-md-4">
                                 <select  name ="inRangoUser" id="inRangoUser" class="form-control select2" style="width:100%;">
                                     <option value="">Costo del producto</option>
-                                    <option value="1">Implan</option>
-                                    <option value="2">Director</option>
-                                    <option value="3">Usuario</option>
+
                                 </select>
                             </div>
                         <div class="col-md-6">

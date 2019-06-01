@@ -24,89 +24,34 @@
                     <ul class="nav navbar-nav">
                         <li class="dropdown messages-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="fa fa-cart-arrow-down"></i>
-                            <span class="label label-success">4</span>
+                                <i class="fa fa-cart-arrow-down"></i>
+                                <span class="label label-success">4</span>
                             </a>
                             <ul class="dropdown-menu">
-                            <li class="header">Carrito</li>
-                            <li>
-                                <ul class="menu">
-                                    <li>
-                                        <a href="#">
-                                        <div class="pull-left">
-                                            <img src="<?php echo $ruta;?>imagenes_a_subir/0750101312203M.jpg" class="img-circle" alt="User">
-                                        </div>
-                                        <h4>
-                                            Categoria
-                                            <small><i class="fa fa-clock-o"></i> 5</small>
-                                        </h4>
-                                        <p>Chelas para calor 700 ml</p>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="footer"><a href="#">See All Messages</a></li>
-                            </ul>
-                        </li>
-
-                        <!-- Notifications: style can be found in dropdown.less -->
-                        <li class="dropdown notifications-menu">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="fa fa-bell-o"></i>
-                                <span class="label label-warning">10</span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li class="header">You have 10 notifications</li>
+                                <li class="header">Carrito</li>
                                 <li>
-                                    <!-- inner menu: contains the actual data -->
                                     <ul class="menu">
                                         <li>
                                             <a href="#">
-                                                <i class="fa fa-users text-aqua"></i> 5 new members joined today
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="footer"><a href="#">View all</a></li>
-                            </ul>
-                        </li>
-                        <!-- Tasks: style can be found in dropdown.less -->
-                        <li class="dropdown tasks-menu">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="fa fa-flag-o"></i>
-                                <span class="label label-danger">9</span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li class="header">You have 9 tasks</li>
-                                <li>
-                                    <!-- inner menu: contains the actual data -->
-                                    <ul class="menu">
-                                        <li>
-                                            <!-- Task item -->
-                                            <a href="#">
-                                                <h3>
-                                                    Design some buttons
-                                                    <small class="pull-right">20%</small>
-                                                </h3>
-                                                <div class="progress xs">
-                                                    <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                                                        <span class="sr-only">20% Complete</span>
-                                                    </div>
+                                                <div class="pull-left">
+                                                    <img src="<?php echo $ruta;?>imagenes_a_subir/0750101312203M.jpg"
+                                                        class="img-circle" alt="User">
                                                 </div>
+                                                <h4>
+                                                    Jumex
+                                                    <small><i class="fa fa-clock-o"></i> 5</small>
+                                                </h4>
+                                                <p>Bebida 700 ml</p>
                                             </a>
                                         </li>
-                                        <!-- end task item -->
                                     </ul>
                                 </li>
-                                <li class="footer">
-                                    <a href="#">View all tasks</a>
-                                </li>
+                                <li class="footer"><a href="#">See All Messages</a></li>
                             </ul>
                         </li>
-                        <!-- User Account: style can be found in dropdown.less -->
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <span class="hidden-xs">Nombre del usuario</span>
+                                <span class="hidden-xs">Leonardo Vázquez</span>
                             </a>
                             <ul class="dropdown-menu">
                                 <!-- User image -->
@@ -145,7 +90,7 @@
                         </li>
                         <!-- Control Sidebar Toggle Button -->
                         <li>
-                            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+                            <a href="<?php echo $ruta;?>configuracion"><i class="fa fa-gears"></i></a>
                         </li>
                     </ul>
                 </div>
@@ -163,7 +108,9 @@
                     <div class="input-group">
                         <input type="text" name="q" class="form-control" placeholder="Search...">
                         <span class="input-group-btn">
-                            <button type="submit" name="search" id="search-btn" class="btn btn-flat"><iclass="fa fa-search"></i></button>
+                            <button type="submit" name="search" id="search-btn" class="btn btn-flat">
+                                <i class="fa fa-search"></i>
+                            </button>
                         </span>
                     </div>
                 </form>
@@ -172,19 +119,43 @@
                 <ul class="sidebar-menu" data-widget="tree">
                     <li class="header">Menú de Opciones</li>
 
-                    
-                    <li class="active">
-                        <a href="<?php echo $ruta.$ubicacion['perfil'];?>/productos" >
+
+                    <li class="<?php if($rutas[0]==$ubicacion['perfil']) echo 'active';?>">
+                        <a href="<?php echo $ruta.$ubicacion['perfil'];?>">
+                            <i class="fa fa-th"></i> <span>Compras</span>
+                            <span class="pull-right-container">
+                                <small class="label pull-right bg-green">new</small>
+                            </span>
+                        </a>
+                    </li>
+                    <li class="<?php if($rutas[0]=='registros') echo 'active';?>">
+                        <a href="<?php echo $ruta;?>registros">
                             <i class="fa fa-th"></i> <span>Productos</span>
                             <span class="pull-right-container">
                                 <small class="label pull-right bg-green">new</small>
                             </span>
                         </a>
                     </li>
-                    
-                    <li>
-                        <a href="<?php echo $ruta.$ubicacion['perfil'];?>/usuarios"><i class="fa fa-book"></i> 
-                            <span>Usuarios</span>
+
+                    <li class="<?php if($rutas[0]=='configuracion') echo 'active';?>">
+                        <a href="<?php echo $ruta;?>configuracion"><i class="fa fa-book"></i>
+                            <span>Mis Datos</span>
+                            <span class="pull-right-container">
+                                <small class="label pull-right bg-green">+</small>
+                            </span>
+                        </a>
+                    </li>
+                    <li class="<?php if($rutas[0]=='usuariossistema') echo 'active';?>">
+                        <a href="<?php echo $ruta;?>UsuariosSistema"><i class="fa fa-book"></i>
+                            <span>Usuarios Sistema</span>
+                            <span class="pull-right-container">
+                                <small class="label pull-right bg-green">+</small>
+                            </span>
+                        </a>
+                    </li>
+                    <li class="<?php if($rutas[0]=='notas') echo 'active';?>">
+                        <a href="<?php echo $ruta;?>Notas"><i class="fa fa-book"></i>
+                            <span>Pedidos</span>
                             <span class="pull-right-container">
                                 <small class="label pull-right bg-green">+</small>
                             </span>
