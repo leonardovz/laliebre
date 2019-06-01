@@ -5,7 +5,7 @@
 // }
 function ruta(){
     $ruta = $_SERVER['HTTP_HOST'];
-    return 'https://'.$ruta.'/modularV2/';
+    return 'https://'.$ruta.'/ModularV2/';
 }
 
 $ubicacion = array(

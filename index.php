@@ -21,9 +21,6 @@ if(isset($_GET['ruta'])){
     elseif($rutas[0]==='contacto'){             ////// CONTACTO
         require_once 'views/contact.php';
     }
-    // if (false) {
-
-    // }
     elseif($rutas[0]==='carrito'){             ////// CONTACTO
         require_once 'views/carrito.view.php';
     }
@@ -39,7 +36,6 @@ if(isset($_GET['ruta'])){
     elseif($rutas[0]=='StokProductos'){
         require_once 'administrador/cuenta.php';
     }
-
     elseif($rutas[0]==='login' ){               ////// perfil
         require_once 'administrador/login.php';
     }
