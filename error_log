@@ -2266,3 +2266,5 @@
 [31-May-2019 20:04:06 America/Mexico_City] PHP Warning:  Module 'SourceGuardian' already loaded in Unknown on line 0
 [31-May-2019 20:05:56 America/Mexico_City] PHP Warning:  Module 'imagick' already loaded in Unknown on line 0
 [31-May-2019 20:05:56 America/Mexico_City] PHP Warning:  Module 'SourceGuardian' already loaded in Unknown on line 0
+[31-May-2019 20:09:06 America/Mexico_City] PHP Warning:  Module 'imagick' already loaded in Unknown on line 0
+[31-May-2019 20:09:06 America/Mexico_City] PHP Warning:  Module 'SourceGuardian' already loaded in Unknown on line 0
