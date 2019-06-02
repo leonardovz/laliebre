@@ -63,7 +63,7 @@
     <!-- /.content -->
 </div>
 
-<?php include_once('templates/footer.php');?>
+<?php include_once('administrador/templates/footer.php');?>
 <script>
 $(document).ready(function() {
     $('.select2').select2();
