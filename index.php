@@ -1,5 +1,5 @@
 <?php 
-
+session_start();
 require_once 'config/config.php';
 require_once 'config/funciones.php';
 require_once 'config/rutas.php';
@@ -24,29 +24,63 @@ if(isset($_GET['ruta'])){
     elseif($rutas[0]==='carrito'){             ////// CONTACTO
         require_once 'views/carrito.view.php';
     }
+    
     elseif($rutas[0]===$ubicacion['perfil'] ){  
-        require_once 'administrador/index.php';
+        if(validarSesion()){
+            require_once 'administrador/index.php';
+        }else{
+            reloadLogin($ruta,$ubicacion);
+        }
     }
     elseif($rutas[0]=='registros'){
-        require_once 'administrador/productos.php';
+        if(validarSesion()){
+            require_once 'administrador/productos.php';
+        }else{
+            reloadLogin($ruta,$ubicacion);
+        }
     }
-    elseif($rutas[0]=='configuracion'){
-        require_once 'administrador/cuenta.php';
+    elseif($rutas[0]=='configuracion'){             ////// perfil
+        if(validarSesion()){
+            require_once 'administrador/cuenta.php';
+        }else{
+            reloadLogin($ruta,$ubicacion);
+        }
     }
-    elseif($rutas[0]=='StokProductos'){
-        require_once 'administrador/cuenta.php';
+    elseif($rutas[0]=='StokProductos'){             ////// perfil
+        if(validarSesion()){
+            require_once 'administrador/cuenta.php';
+        }else{
+            reloadLogin($ruta,$ubicacion);
+        }
     }
-    elseif($rutas[0]==='login' ){               ////// perfil
-        require_once 'administrador/login.php';
+    elseif($rutas[0]==='notas' ){                   ////// perfil
+        if(validarSesion()){
+            require_once 'administrador/notas.php';
+        }else{
+            reloadLogin($ruta,$ubicacion);
+        }
     }
-    elseif($rutas[0]==='notas' ){               ////// perfil
-        require_once 'administrador/notas.php';
+    elseif($rutas[0]==='usuariossistema' ){         ////// perfil
+        if(validarSesion()){
+            require_once 'administrador/clientes.php';
+        }else{
+            reloadLogin($ruta,$ubicacion);
+        }
     }
-    elseif($rutas[0]==='usuariossistema' ){               ////// perfil
-        require_once 'administrador/clientes.php';
+
+    elseif($rutas[0]==='login'){                    ////// perfil
+        if(validarSesion()){
+            echo '<script>window.location.replace("' . $ruta . $ubicacion['perfil'] . '");</script>';
+        }else{
+            require_once 'administrador/login.php';
+        }
     }
-    elseif($rutas[0]==='registro' ){               ////// perfil
-        require_once 'administrador/registro.php';
+    elseif($rutas[0]==='registro' ){
+        if(validarSesion()){
+            echo '<script>window.location.replace("' . $ruta . $ubicacion['perfil'] . '");</script>';
+        }else{
+            require_once 'administrador/registro.php';
+        }
     }
     else{
         require_once 'error.php';
@@ -57,3 +91,13 @@ if(isset($_GET['ruta'])){
 }
 
 
+function validarSesion(){
+    if(isset($_SESSION['validarSesion']) && $_SESSION['validarSesion'] == 'ok'){
+        return true; 
+    }else{
+        return false;
+    }
+}
+function reloadLogin($ruta,$ubicacion){
+    return '<script>window.location.replace("' . $ruta . $ubicacion['perfil'] . '");</script>';
+}

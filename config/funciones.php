@@ -96,10 +96,10 @@ function obtenerPaginacion($conexion,$accion,$busqueda){
     }
 }
 
-function traerCategoriasSQLI($conexion){
-	$sql = "SELECT Nombre FROM categoria ORDER BY Nombre ASC";
+function traerCategoriasSQLI($conexion, $idCategoria=false){
+	$sql = "SELECT * FROM categoria ".(($idCategoria) ? " WHERE id = ".$idCategoria : "")."ORDER BY Nombre ASC";
 	$resultado = $conexion->query($sql);
-    return ($resultado->num_rows) ? true : false;
+    return ($resultado->num_rows) ? $resultado : false;
 }
 function traerProdRelacionados($conexion,$categoria,$inicio,$limite){
 	$sql="SELECT p.id, p.Nombre, p.Descripcion, p.imagen, p.idCategoria, c.Nombre AS catNombre, p.precio, p.fecha, p.idUsuario, p.estado FROM productos p INNER JOIN categoria c ON c.id = p.idCategoria WHERE p.idCategoria = $categoria LIMIT ".(($inicio) ? " $inicio,":"")."$limite";

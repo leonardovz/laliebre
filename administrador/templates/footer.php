@@ -16,3 +16,28 @@
 <script src="<?php echo $ruta;?>administrador/recursos/dist/js/demo.js"></script>
 <script src="<?php echo $ruta;?>administrador/recursos/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
 <script src="<?php echo $ruta;?>administrador/recursos/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script src="<?php echo $ruta;?>vendor/sweetalert/sweetalert2.all.min.js"></script>
+<script>
+    $("#cerrarSesion").on('click',function(e){
+        e.preventDefault();
+        var t = void 0;
+        Swal.fire({
+            title: "Cerrando Sesión",
+            html: "Cerrando <strong></strong>",
+            timer: 2000,
+            onBeforeOpen: function() {
+            Swal.showLoading(), t = setInterval(function() {
+                Swal.getContent().querySelector("strong").textContent = Swal.getTimerLeft()
+            }, 100)
+            },
+            onClose: function() {
+            clearInterval(t)
+            }
+        }).then(function(t) {
+
+            window.location.replace("<?php echo $ruta;?>php/cerrarSesion.php");
+            // t.dismiss === Swal.DismissReason.timer && console.log("I was closed by the timer")
+        })
+        
+    });
+</script>

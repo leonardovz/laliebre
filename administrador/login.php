@@ -51,7 +51,7 @@
     <div class="login-box-body">
       <p class="login-box-msg">Ingresa tus datos para ir a tu perfil</p>
 
-      <form action="<?php echo $ruta.$ubicacion['perfil'];?>" method="post">
+      <form id="login" method="post">
         <div class="form-group has-feedback">
           <input type="email" class="form-control" name="email" id="email" placeholder="Email">
           <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
@@ -62,6 +62,9 @@
         </div>
         <div class="row">
           <!-- /.col -->
+          <div class="col-xs-12" id="errores">
+            
+          </div>
           <div class="col-xs-12">
             <button type="submit" class="btn btn-primary btn-block btn-flat">Ingresar</button>
           </div>
@@ -91,14 +94,6 @@
   </div>
 </div>
 <?php include_once ('administrador/templates/footer.php');?>
-<script>
-  $(function () {
-    $('input').iCheck({
-      checkboxClass: 'icheckbox_square-blue',
-      radioClass: 'iradio_square-blue',
-      increaseArea: '20%' /* optional */
-    });
-  });
-</script>
+<script src="<?php echo $ruta;?>js/recursos/login.js"></script>
 </body>
 </html>

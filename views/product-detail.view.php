@@ -48,10 +48,10 @@
 							<div class="wrap-slick3-dots"></div>
 							<div class="wrap-slick3-arrows flex-sb-m flex-w"></div>
 							<div class="slick3 gallery-lb">
-								<div class="item-slick3" data-thumb="<?php echo $ruta.'imagenes_a_subir/'. $cardResult['imagen'];?>">
+								<div class="item-slick3" data-thumb="<?php echo $ruta.$cardResult['imagen'];?>">
 									<div class="wrap-pic-w pos-relative">
-										<img src="<?php echo $ruta.'imagenes_a_subir/'. $cardResult['imagen'];?>" alt="IMG-PRODUCT">
-										<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="<?php echo $ruta.'imagenes_a_subir/'. $cardResult['imagen'];?>">
+										<img src="<?php echo $ruta. $cardResult['imagen'];?>" alt="IMG-PRODUCT">
+										<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="<?php echo $ruta.''. $cardResult['imagen'];?>">
 											<i class="fa fa-expand"></i>
 										</a>
 									</div>
@@ -124,7 +124,7 @@
 											<!-- Block2 -->
 											<div class="block2">
 												<div class="block2-pic hov-img0">
-													<img src="<?php echo $ruta.'imagenes_a_subir/'.$img;?>" alt="IMG-PRODUCT">
+													<img src="<?php echo $ruta.$img;?>" alt="IMG-PRODUCT">
 
 													<a href="<?php echo $ruta .$ubicacion['productos'].'/'.  $idProducto;?>" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
 														Vista Previa

@@ -14,7 +14,7 @@ if (!$conexion) {
     die(json_encode($respuesta));
 }
 
- $_POST['opcion']="prodRelacionado";
+//  $_POST['opcion']="prodRelacionado";
  $_POST['idCategoria']=1;
 $ruta = ruta(); //Usamos la ruta absoluta para no tener conflicto con las direcciones
 if(!isset($_POST['opcion'])){
@@ -22,9 +22,19 @@ if(!isset($_POST['opcion'])){
     // die();
 }
 switch ($_POST['opcion']) {
-    case 'prodRelacionado':
-        
+    case 'categoriaOption':
+        $categorias = traerCategoriasSQLI($conexion);
+        echo '<select  name ="categoria" id="categoria" class="form-control select2" style="width:100%;">';
+        if($categorias){
+            while ($categoria = $categorias->fetch_assoc()) {
+                echo '<option value ="'.$categoria['id'].'">'.$categoria['Nombre']. ' </option>';
+            }
+        }else{
+            echo '<option value =""> No hay Categorias</option>'; 
+        }
+        echo '</select>';
     break;
+
 }
 
 ?> 

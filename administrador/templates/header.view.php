@@ -83,7 +83,7 @@
                                         <a href="#" class="btn btn-default btn-flat">Profile</a>
                                     </div>
                                     <div class="pull-right">
-                                        <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                                        <a id="cerrarSesion" href="#" class="btn btn-default btn-flat">Cerrar Sesion</a>
                                     </div>
                                 </li>
                             </ul>

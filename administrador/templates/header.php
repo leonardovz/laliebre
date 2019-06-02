@@ -40,6 +40,8 @@
   <link rel="stylesheet" href="<?php echo $ruta;?>administrador/recursos/dist/css/AdminLTE.min.css">
   <link rel="stylesheet" href="<?php echo $ruta;?>administrador/recursos/dist/css/skins/_all-skins.min.css">
   <link rel="stylesheet" href="<?php echo $ruta;?>administrador/recursos/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+	<link rel="stylesheet" href="<?php echo $ruta;?>vendor/sweetalert/sweetalert2.min.css">
+
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
     <script>
