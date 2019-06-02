@@ -34,7 +34,6 @@
             clearInterval(t)
             }
         }).then(function(t) {
-
             window.location.replace("<?php echo $ruta;?>php/cerrarSesion.php");
             // t.dismiss === Swal.DismissReason.timer && console.log("I was closed by the timer")
         })

@@ -29,6 +29,7 @@
   <meta name="twitter:card" content="" />
   
   <link rel="stylesheet" href="<?php echo $ruta;?>administrador/recursos/bower_components/bootstrap/dist/css/bootstrap.min.css">
+  
   <link rel="stylesheet" href="<?php echo $ruta;?>administrador/recursos/bower_components/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="<?php echo $ruta;?>administrador/recursos/bower_components/Ionicons/css/ionicons.min.css">
   <link rel="stylesheet" href="<?php echo $ruta;?>administrador/recursos/bower_components/bootstrap-daterangepicker/daterangepicker.css">

@@ -30,8 +30,7 @@
   
 	<link rel="icon" type="image/png" href="<?php echo $ruta;?>images/icons/favicon.png"/>
 	<link rel="stylesheet" type="text/css" href="<?php echo $ruta;?>vendor/bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="<?php echo $ruta;?>fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+	<link rel="stylesheet" href="<?php echo $ruta;?>administrador/recursos/bower_components/font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo $ruta;?>fonts/iconic/css/material-design-iconic-font.min.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo $ruta;?>fonts/linearicons-v1.0.0/icon-font.min.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo $ruta;?>vendor/animate/animate.css">

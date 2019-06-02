@@ -86,7 +86,7 @@
 </footer> -->
 </div>
 
-<?php include_once('templates/footer.php');?>
+<?php include_once('administrador/templates/footer.php');?>
 <script src="<?php echo $ruta;?>js/recursos/producto.js"></script>
 </body>
 
