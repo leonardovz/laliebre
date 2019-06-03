@@ -60,15 +60,32 @@
                         </div>
                         
                         <div class="form-group">
-                            <div class="col-md 12">
-                                <div id="errores"></div>
-                            </div>
+                            
                         </div>
-                        <button type="submit" class="btn btn-block btn-warning btn-lg">Enviar formulario</button>
+                        <button type="submit" class="btn btn-block btn-success   btn-lg">Enviar formulario</button>
                     </div>
                     <!-- /.box-body -->
                     <div class="box-footer">
-                        <button type="submit" class="btn btn-info pull-right">Guardar Cambios</button>
+                        <!-- <button type="submit" class="btn btn-info pull-right">Guardar Cambios</button> -->
+                    </div>
+                    <!-- /.box-footer -->
+                </form>
+                <div class="col-md 12">
+                    <div id="errores"></div>
+                </div>
+            </div>
+            <div class="col-md-12 box"><br><br>
+                <form  id="registroCategoria"  method="POST" enctype="multipart/form-data" >
+                    <div class="col-md-8">
+                        <div class="form-group">
+                            <input id="nombreCategoria" name="nombreCategoria" class="form-control  " type="text" placeholder="Nueva Categoria" required>
+                        </div>
+                    </div>
+                        <div class="col-md-4">
+                        <button type="submit" class="btn bg-green pull-right btn-block">Guardar Categoria</button>
+
+                        </div>
+                    <div class="box-footer">
                     </div>
                     <!-- /.box-footer -->
                 </form>

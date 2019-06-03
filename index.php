@@ -99,5 +99,5 @@ function validarSesion(){
     }
 }
 function reloadLogin($ruta,$ubicacion){
-    return '<script>window.location.replace("' . $ruta . $ubicacion['perfil'] . '");</script>';
+    echo '<script>window.location.replace("' . $ruta . $ubicacion['login'].'");</script>';
 }

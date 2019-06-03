@@ -1,10 +1,20 @@
 var ruta = ruta();
 $(document).ready(function(){
     var total = 0;
+
+    $("#pasarCarrito").on('click',function(e){
+        e.preventDefault();
+        var subtotalproductos = $("#subtotal").attr("total");
+        if(subtotalproductos<= 0){
+            swal("Tu carrito de compras esta Vacio")
+        }
+    });
+
     if(localStorage.getItem("listaProductos")!=null){
         var listaCarrito = JSON.parse(localStorage.getItem("listaProductos"));
         listaCarrito.forEach(funcionForEach);
-        sumarProductos(total);
+        $("#subtotal").html('$ '+number_format(total,2)+' MXN');
+        $("#subtotal").attr("total",(total ) );
         carnalitos();
         function funcionForEach(item,index){
             // console.log("item",item.idproducto);
@@ -23,44 +33,86 @@ $(document).ready(function(){
                             <i class="fs-16 zmdi zmdi-minus"></i>
                         </div>
 
-                        <input class="mtext-104 cl3 txt-center num-product" type="text" id="totalProd" name="num-product1" value="1">
+                        <input class="mtext-104 cl3 txt-center num-product" type="text" name="num-product1" value="1">
 
                         <div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m">
                             <i class="fs-16 zmdi zmdi-plus"></i>
                         </div>
                     </div>
                 </td>
-                <td class="column-5">$ 36.00</td>
+                <td class="column-5">`+number_format(item.precio,2)+`</td>
             </tr>
             `);
             total= parseFloat(item.precio)+parseFloat(total);
-            console.log(total);
         }
     }
 
     function carnalitos (){
         var totalProd=0,
             costoprod = 0,
-            totalSuma = 0;
+            totalSuma = 0,
+            totalFinal=0;
         $(".btn-num-product-up").on('click',function(params) {
             totalProd = $(this).siblings('.num-product').val()
-            costoprod = $(this).parent().parent().siblings('.column-3').attr('precio');
-            totalSuma=number_format(parseFloat((totalProd)* parseFloat(costoprod) ) ,2 );
             totalProd=parseInt(totalProd)+1;
+            costoprod = $(this).parent().parent().siblings('.column-3').attr('precio');
+            totalSuma=number_format(parseFloat((totalProd) * parseFloat(costoprod) ) ,2 );
+            
             $(this).siblings('.num-product').val(totalProd);
-            $(this).parent().parent().siblings('.column-5').html('$ '+totalSuma);            
+            $(this).parent().parent().siblings('.column-5').html('$ '+totalSuma);
+            // En Proceso
+            totalFinal = $("#subtotal").attr("total");
+            $("#subtotal").attr("total",(number_format(parseFloat(totalFinal) + parseFloat(costoprod),2 ) ) );
+            $("#subtotal").html('$ '+number_format(parseFloat(totalFinal)+parseFloat(costoprod) ,2 ) +' MXN');
         });
         $(".btn-num-product-down").on('click',function(params) {
             totalProd = $(this).siblings('.num-product').val()
-            costoprod = $(this).parent().parent().siblings('.column-3').attr('precio');
-            totalProd=parseInt(totalProd)-1;
-            totalSuma=number_format(parseFloat((totalProd)* parseFloat(costoprod) ) ,2 );
-            $(this).siblings('.num-product').val(totalProd);
-            $(this).parent().parent().siblings('.column-5').html('$ '+totalSuma);            
+            if((totalProd-1) > 0 ){
+                totalProd=parseInt(totalProd)-1;
+                costoprod = $(this).parent().parent().siblings('.column-3').attr('precio');
+                totalSuma=number_format(parseFloat((totalProd)* parseFloat(costoprod) ) ,2 );
+                $(this).siblings('.num-product').val(totalProd);
+                $(this).parent().parent().siblings('.column-5').html('$ '+totalSuma);
+                totalFinal = $("#subtotal").attr("total");
+                $("#subtotal").attr("total",(number_format(parseFloat(totalFinal) -  parseFloat(costoprod),2 ) ) );
+                $("#subtotal").html('$ '+number_format(parseFloat(totalFinal)- parseFloat(costoprod) ,2 ) +' MXN');
+            }else{
+                Swal.fire({
+                    title: '¡Cuidado!',
+                    text: "Si quitas un producto más sera retirado de tu carrito",
+                    type: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: '¡Si, continuar!'
+                  }).then((result) => {
+                    if (result.value) {
+                      //  registroUser(formulario)
+                    }
+                  });
+            }
         });
-    }
-    function sumarProductos(total){
-        $("#subtotal").html('$ '+number_format(total,2)+' MXN');
+        $(".num-product").change(function(params) {
+            var costo = $(this).val();
+            if(costo <= 0 ){
+                Swal.fire({
+                    title: '¡Cuidado!',
+                    text: "Si quitas un producto más sera retirado de tu carrito",
+                    type: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: '¡Si, continuar!'
+                  }).then((result) => {
+                    if (result.value) {
+                      //  Aliminar del Local Storage
+                    }else{
+                        $(this).val(1);
+                    }
+                  });
+            }
+        });
+        
     }
 
     function number_format(amount, decimals) {

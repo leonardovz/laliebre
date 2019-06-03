@@ -43,7 +43,7 @@ $conexion = conexion($bd_config);
                         </div>
 
                         <div class="size-209">
-                            <span class="mtext-110 cl2" id="subtotal">
+                            <span class="mtext-110 cl2" id="subtotal" total="0">
                                 $00.00 MXN
                             </span>
                         </div>
@@ -57,7 +57,7 @@ $conexion = conexion($bd_config);
                         pedidos, puede haber variación en precios si los productos no son recogidos en un lapso de
                         <strong>6hrs</strong> . </p>
                     <br>
-                    <button class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer">
+                    <button class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer" id="pasarCarrito">
                         Imprimir mi Lista de Compras
                     </button>
                 </div>

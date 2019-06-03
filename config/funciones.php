@@ -1,4 +1,25 @@
 <?php 
+function valNum($dato){
+    return preg_match('/^[0-9.]*$/',$dato);
+}
+function valTextNum($dato){
+    return preg_match('/^[a-zA-Z0-9]*$/',$dato);
+}
+function valText($dato){
+    return preg_match('/^[a-zA-ZñÑáéíóúÁÉÍÓÚ ]*$/',$dato);
+}
+function valDomicilio($dato){
+    return preg_match('/^[a-zA-ZñÑáéíóúÁÉÍÓÚ0-9 #-.+]*$/',$dato);
+}
+function valFecha($dato){
+    return preg_match('/^[0-9-]*$/',$dato);
+}
+function valEmail($dato){
+    return preg_match('/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/',$dato);
+}
+function valPass($dato){
+    return preg_match('/^[a-zA-Z0-9@]*$/',$dato);
+}
 
 function limpiarDatos($datos){
 	$datos = trim($datos);

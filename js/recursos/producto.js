@@ -29,6 +29,66 @@ $(document).ready(function(){
           var imagen = document.getElementById("inGaleria");
           validarImagen(imagen);
       });
+    $('#registroCategoria').on('submit',function(e){
+        $(".alert").remove();
+        e.preventDefault();
+        var nombreCat      = $('#nombreCategoria').val();
+        var errores = 0;
+        if(nombreCat != ""){
+            var expresion =/^[a-zA-Z0-9 áéíóúÁÉÍÓÚ ,. #-]*$/;
+            if(!expresion.test(nombreCat)){
+                errores +=1;
+                swal(' No puedes ingresar caracteres especiales en le Nombre ');
+            }
+        }else{
+            errores +=1;
+            swal(' ERROR:  <small class="fs-18">Nombre de producto obligatorio</small>');
+        }
+        
+        console.log(errores);
+        if(errores == 0 ){
+            Swal.fire({
+                title: 'Atengo!',
+                text: "Estas apunto de agregar una nueva Categoria",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: '¡Si, continuar!'
+              }).then((result) => {
+                if (result.value) {
+                    $.ajax({
+                        url: ruta+'php/ajax.php',
+                        type: 'POST',
+                        data: 'opcion=nuevaCategoria&nombreCat='+nombreCat,
+                        dataType: 'json',
+                        error: function(xhr,status) {
+                            $('#targeta').html("Ocurrio un error al realizar la peticion al servidor");
+                        },
+                        success: function(data) {
+                            if (data.respuesta == 'exito') {
+                                Swal.fire({
+                                    position: 'top-end',
+                                    type: 'success',
+                                    title: data.Texto,
+                                    showConfirmButton: false,
+                                    timer: 1500
+                                });
+                                $("#registroCategoria")[0].reset();
+                            } else {
+                                swal({
+                                    type: 'error',
+                                    title: 'Oops...',
+                                    text: data
+                                });
+                            }
+                        }
+                    });
+                }
+              });
+        }
+
+    });
     $('#nuevoProducto').on('submit',function(e){
         $(".alert").remove();
         e.preventDefault();

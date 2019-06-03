@@ -145,7 +145,7 @@
 						<a href="<?php echo $ruta. $ubicacion['carrito']?>" class="flex-c-m trans-04 p-lr-25">
 							Carrito	
 						</a>
-						<a href="<?php echo $ruta.$ubicacion['perfil'];?>" class="flex-c-m p-lr-10 trans-04">
+						<a href="<?php echo $ruta.$ubicacion['login'];?>" class="flex-c-m p-lr-10 trans-04">
 							Cuenta
 						</a>
 					</div>
