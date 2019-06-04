@@ -1,5 +1,5 @@
 $(document).ready(function(){
-      /**////////////////////////////////////////////*/
+/**////////////////////////////////////////////*/
     /**/////////////CARRITO DE COMPRAS ////////////*/
     /**/////////////////////////////// ////////////*/
     addCart();
@@ -11,7 +11,7 @@ $(document).ready(function(){
     }
 
     function addCart(){
-        $('.producto-carrito').on('click',function(){
+        $('.producto-carrito').off('click').on('click',function(){
             var idproducto  = $(this).attr('idproducto'),
                      nombre = $(this).attr('nombre'),
                      precio = $(this).attr('precio'),

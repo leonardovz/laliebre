@@ -90,7 +90,6 @@ $(document).ready(function() {
                 </a>
             </li>
             `);
-            // total= parseFloat(item.precio*item.cantidad)+parseFloat(total);
         }
 
     }

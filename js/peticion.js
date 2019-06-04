@@ -47,16 +47,16 @@ $(document).ready(function() {
             success: function(resp) {
                 if(actual==0){
                     $('#targeta').html(resp);
-                    addCart();
 
                 }else{
                     $('#targeta').append(resp);
-                    addCart();
+
 
                 }
                 if(resp.length < 10){
                     $('#traerMas').hide();
                 }
+                addCart();
                 actual++;
             }
         });
@@ -75,7 +75,7 @@ $(document).ready(function() {
                 if(actual==0){
                     $('#targeta').html(resp);
                     actual++;
-                    addCart();
+                    
                     if(resp.length < 10){
                         $('#traerMas').hide();
                     }
@@ -83,12 +83,12 @@ $(document).ready(function() {
                 }else{
                     $('#targeta').append(resp);
                     actual++;
-                    addCart();
+              
                     if(resp.length < 10){
                         $('#traerMas').hide();
                     }
                 }
-                
+                addCart();
             }
         });
     }
@@ -104,7 +104,7 @@ $(document).ready(function() {
     }
 
     function addCart(){
-        $('.producto-carrito').on('click',function(){
+        $('.producto-carrito').off('click').on('click',function(){
             var idproducto  = $(this).attr('idproducto'),
                      nombre = $(this).attr('nombre'),
                      precio = $(this).attr('precio'),
