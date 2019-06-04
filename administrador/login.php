@@ -16,13 +16,13 @@
                   <li class="dropdown messages-menu">
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                       <i class="fa fa-cart-arrow-down"></i>
-                      <span class="label label-success">4</span>
+                      <span class="label label-success" id="cantidad">0</span>
                       </a>
                       <ul class="dropdown-menu">
                       <li class="header">Carrito</li>
                       <li>
-                          <ul class="menu">
-                              <li>
+                          <ul class="menu" id="items">
+                              <!-- <li>
                                   <a href="#">
                                   <div class="pull-left">
                                       <img src="<?php echo $ruta;?>imagenes_a_subir/0750101312203M.jpg" class="img-circle" alt="User">
@@ -33,10 +33,10 @@
                                   </h4>
                                   <p>Chelas para calor 700 ml</p>
                                   </a>
-                              </li>
+                              </li> -->
                           </ul>
                       </li>
-                      <li class="footer"><a href="#">See All Messages</a></li>
+                      <li class="footer"><a href="<?php echo $ruta;?>carrito">Ver mi Carrito</a></li>
                       </ul>
                   </li>
               </ul>
@@ -86,14 +86,12 @@
           <br>
       </div>
       <!-- .social-auth-links -->
-      
-      
-
     </div>
     <!-- /.login-box-body -->
   </div>
 </div>
 <?php include_once ('administrador/templates/footer.php');?>
 <script src="<?php echo $ruta;?>js/recursos/login.js"></script>
+<!-- <script src="<?php //echo $ruta;?>js/recursos/impresiones.js"></script> -->
 </body>
 </html>

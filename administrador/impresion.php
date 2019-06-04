@@ -3,7 +3,7 @@
 <body onload="window.print();">
     <div class="wrapper">
         <!-- Main content -->
-        <section class="invoice" style="min-width: 1250px">
+        <section class="invoice" >
             <!-- title row -->
             <div class="row">
                 <div class="col-xs-12">

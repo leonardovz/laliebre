@@ -68,6 +68,32 @@ $(document).ready(function() {
             });
         }
     });
+   
+    if(localStorage.getItem("listaProductos")!=null){
+        console.log("Entro");
+        var listaCarrito = JSON.parse(localStorage.getItem("listaProductos"));
+        var total = 0;
+        listaCarrito.forEach(funcionForEach);
+        $("#cantidad").html(total);
+        function funcionForEach(item,index){
+            total++;
+            $("#items").append(`
+            <li>
+                <a href="`+ruta+'carrito'+`">
+                <div class="pull-left">
+                    <img src="`+ruta+item.imagen+`" class="img-circle" alt="User">
+                </div>
+                <h4>
+                    `+item.nombre+`
+                </h4>
+                <p>`+item.cantidad+`</p>
+                </a>
+            </li>
+            `);
+            // total= parseFloat(item.precio*item.cantidad)+parseFloat(total);
+        }
+
+    }
     function timeout(){
         setTimeout(function(){
             location.reload();

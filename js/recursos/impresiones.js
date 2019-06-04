@@ -23,6 +23,7 @@ $(document).ready(function(){
             total= parseFloat(item.precio*item.cantidad)+parseFloat(total);
         }
     }
+
     function number_format(amount, decimals) {
 
         amount += ''; // por si pasan un numero en vez de un string
@@ -44,6 +45,6 @@ $(document).ready(function(){
             amount_parts[0] = amount_parts[0].replace(regexp, '$1' + ',' + '$2');
 
         return amount_parts.join('.');
-    } 
+    }
   
 })
