@@ -165,3 +165,4 @@
 		<?php } ?>
 		
 	<?php require_once 'templates/footer.php';?>
+	<script src="<?php echo $ruta;?>js/recursos/detalleCarrito.js"></script>

@@ -3,10 +3,13 @@ $(document).ready(function(){
     var total = 0;
 
     $("#pasarCarrito").on('click',function(e){
-        e.preventDefault();
+        
         var subtotalproductos = $("#subtotal").attr("total");
         if(subtotalproductos<= 0){
+            e.preventDefault();
             swal("Tu carrito de compras esta Vacio")
+        }else{
+            // window.location.replace(ruta+"imprimir")
         }
     });
     var uno = 1;

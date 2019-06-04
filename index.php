@@ -24,7 +24,9 @@ if(isset($_GET['ruta'])){
     elseif($rutas[0]==='carrito'){             ////// CONTACTO
         require_once 'views/carrito.view.php';
     }
-    
+    elseif($rutas[0]==='imprimir'){             ////// CONTACTO
+        require_once 'administrador/impresion.php';
+    }
     elseif($rutas[0]===$ubicacion['perfil'] ){  
         if(validarSesion()){
             require_once 'administrador/index.php';

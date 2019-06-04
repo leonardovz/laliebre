@@ -57,9 +57,9 @@ $conexion = conexion($bd_config);
                         pedidos, puede haber variación en precios si los productos no son recogidos en un lapso de
                         <strong>6hrs</strong> . </p>
                     <br>
-                    <button class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer" id="pasarCarrito">
+                    <a href="<?php echo $ruta;?>imprimir" class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer" id="pasarCarrito">
                         Imprimir mi Lista de Compras
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>
