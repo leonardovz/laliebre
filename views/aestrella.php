@@ -1,10 +1,5 @@
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-    <title>A*</title>
-    <meta charset="utf-8" />
-    <style>
+<?php include_once ('administrador/templates/header.php');?>
+<style>
         table{ 
             border: 1px solid black;
             border-collapse: collapse;
@@ -16,23 +11,78 @@
         }
         
     </style>
-    <!--    <script src="js.js"></script>-->
-</head>
+<!-- <body class="hold-transition login-page"> -->
+<body class="hold-transition skin-black-light login-page layout-top-nav">
 
-<body>
-    <h2>A*</h2>
-    <label for="lado">Casillas Por lado</label><input type="number" id="lado"> <input id="generar" type="button" value="Generar">
-    <br>
-    <br>
-    <table id="tabla">
+<div class="wrapper">
+  <header class="main-header">
+      <a href="<?php echo $ruta;?>" class="logo">
+          <span class="logo-mini text-dark"><b>H</b>M</span>
+          <span class="logo-lg"><b>HELLO</b>MARKET</span>
+      </a>
+      <nav class="navbar navbar-static-top">
+          
 
-    </table>
+          <div class="navbar-custom-menu">
+              <ul class="nav navbar-nav">
+                  <li class="dropdown messages-menu">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                      <i class="fa fa-cart-arrow-down"></i>
+                      <span class="label label-success" id="cantidad">0</span>
+                      </a>
+                      <ul class="dropdown-menu">
+                      <li class="header">Carrito</li>
+                      <li>
+                          <ul class="menu" id="items">
+                          </ul>
+                      </li>
+                      <li class="footer"><a href="<?php echo $ruta;?>carrito">Ver mi Carrito</a></li>
+                      </ul>
+                  </li>
+              </ul>
+          </div>
+      </nav>
+  </header>
+  <div class="conteiner">
+    <div class="login-logo">
+      <a href="<?php echo $ruta;?>"><b>HELLO</b>MARKET</a>
+    </div>
+    <!-- /.login-logo -->
+    <!-- <div class="row"> -->
+     <div class="col-md-12">
+
+    <!-- <label for="lado">Casillas Por lado</label><input type="number" id="lado"> <input id="generar" type="button" value="Generar">
     <br>
-    <input id="calcular" type="button" value="Calcular">
+    <br> -->
+
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+             <h3 style="color: #000; "> Desarrollo e implementación algoritmo de pasillos</h3>
+
+        <table id="tabla">
+
+        </table>    
+        <br>
+        <input id="calcular" class="btn btn-primary" type="button" value="Encontrar la Ruta más corta">
+
+    </div>
+    <div class="col-md-2"></div>
+    <div class="col-md-12">
+        
+    </div>
+    
+    <br>
     <br>
     <br>
     <p id="peso"></p>
-
+    
+      <!-- .social-auth-links -->
+    <!-- </div> -->
+    <!-- /.login-box-body -->
+  </div>
+</div>
+    
+    <?php include_once ('administrador/templates/footer.php');?>
     <script>
         window.onload = function() {
             var inicio = []; // arreglo que se utiliza para guardar la posicion de inicio
@@ -49,13 +99,13 @@
 
             var linea = 10; // valor de los desplazamientos en linea
             var diagonal = 14; // valor de los desplazamientos en diagonal
-
-            document.getElementById('generar').onclick = function() { // capturar el evento de click en generar
+            cargar();
+            function cargar() { // capturar el evento de click en generar
                 if (inicio.length) { // si ya se habia creado un laberinto se tiene que recargar para no generar conflictos
                     location.reload();
                 }
 
-                var lado = document.getElementById('lado').value; // obtiene el valor de los lados
+                var lado = 15; // obtiene el valor de los lados
                 if (lado > 0) {
                     var tabla = document.getElementById('tabla');
                     tabla.innerHTML = "";
@@ -306,7 +356,7 @@
                     }
                 }
                 console.log(g); // imprime el costo total de movimientos en consola
-                document.getElementById('peso').innerHTML = "Gfinal=" + g[final[0]][final[1]]; // imprime el costo total de movimientos
+                document.getElementById('peso').innerHTML = '<button type="button" class="btn btn-primary">'+"Gfinal=" + g[final[0]][final[1]] + '</button>'; // imprime el costo total de movimientos
 
             }
 

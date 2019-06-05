@@ -76,7 +76,7 @@ $conexion = conexion($bd_config);
                         </div>
 
                         <div class="layer-slick1 animated visible-false" data-appear="rotateIn" data-delay="1600">
-                            <a href="<?php echo $ruta,$ubicacion['tienda'].'/';?>postres"
+                            <a href="<?php echo $ruta,$ubicacion['tienda'].'/';?>panaderia"
                                 class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
                                 Encontrar Productos
                             </a>
@@ -127,7 +127,7 @@ $conexion = conexion($bd_config);
                         </div>
 
                         <div class="layer-slick1 animated visible-false" data-appear="rotateIn" data-delay="1600">
-                            <a href="<?php echo $ruta,$ubicacion['tienda'].'/';?>fruteria"
+                            <a href="<?php echo $ruta,$ubicacion['tienda'].'/';?>frutas-y-verdudas"
                                 class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
                                 Encontrar Productos
                             </a>
@@ -238,7 +238,7 @@ $conexion = conexion($bd_config);
             </div>
 
             <!-- Search product -->
-            <div class="dis-none panel-search w-full p-t-10 p-b-15">LOCA
+            <div class="dis-none panel-search w-full p-t-10 p-b-15">
                 <div class="bor8 dis-flex p-l-15">
                     <button class="size-113 flex-c-m fs-16 cl2 hov-cl1 trans-04">
                         <i class="zmdi zmdi-search"></i>

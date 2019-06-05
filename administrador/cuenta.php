@@ -270,7 +270,7 @@
                         <div class="form-group">
                             <label for="inDireccion" class="col-sm-2 control-label">Direccion</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" name="inDireccion" id="inDireccion" placeholder="Apellidos">
+                                <input type="text" class="form-control" name="inDireccion" id="inDireccion" placeholder="Dirección">
                             </div>
                         </div>
                     </div>
@@ -291,7 +291,7 @@
                         <div class="form-group">
                             <label for="inPassword" class="col-sm-2 control-label">Contraseña</label>
                             <div class="col-sm-10">
-                                <input type="password" class="form-control" name="inPassword" id="inPassword" placeholder="Password">
+                                <input type="password" class="form-control" name="inPassword" id="inPassword" placeholder="Contraseña">
                             </div>
                             <div class="col-md-2"></div>
                             <div class="col-md-10">
@@ -310,7 +310,7 @@
                         <div class="form-group">
                             <label for="inPasswordR" class="col-sm-3 control-label">Repite la contraseña</label>
                             <div class="col-sm-9">
-                                <input type="password" class="form-control" name="inPasswordR" id="inPasswordR" placeholder="Password">
+                                <input type="password" class="form-control" name="inPasswordR" id="inPasswordR" placeholder="Contraseña">
                             </div>
                             <div class="col-md-3"></div>
                             <div class="col-md-9">

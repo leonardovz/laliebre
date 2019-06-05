@@ -48,7 +48,7 @@ $(document).ready(function(){
         // console.log(errores);
         if(errores == 0 ){
             Swal.fire({
-                title: 'Atengo!',
+                title: 'Atento!',
                 text: "Estas apunto de agregar una nueva Categoria",
                 type: 'warning',
                 showCancelButton: true,

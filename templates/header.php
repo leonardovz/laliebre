@@ -73,7 +73,7 @@
 			<div class="top-bar">
 				<div class="content-topbar flex-sb-m h-full container">
 					<div class="left-top-bar">
-						Revisa el Catalogo de Articulos $100
+						<!-- Revisa el Catalogo de Articulos $100 -->
 					</div>
 
 					

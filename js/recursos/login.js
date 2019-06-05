@@ -3,6 +3,10 @@ $(document).ready(function() {
     $("input").focus(function(){
         $(".alert").remove();
     });
+    $("#buscarProd").change(function(){
+		var buscar =$(this).val();
+		window.location.replace(ruta+"tienda/"+buscar);
+    });
 
     $('#login').on('submit',function(e){
         e.preventDefault();

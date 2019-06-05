@@ -36,7 +36,7 @@ $conexion = conexion($bd_config);
 						<button id="tiendabuscar"class="size-113 flex-c-m fs-16 cl2 hov-cl1 trans-04">
 							<i class="zmdi zmdi-search"></i>
 						</button>
-						<input  type="text" id="buscarProd" name ="buscarProd" class="mtext-107 cl2 size-114 plh2 p-r-15" placeholder="Search" value="<?php echo (isset($rutas[1]) && !empty($rutas[1])) ? str_replace('-', ' ',$rutas[1]) : ""; ?>">
+						<input  type="text" id="buscarProd" name ="buscarProd" class="mtext-107 cl2 size-114 plh2 p-r-15" placeholder="Buscar" value="<?php echo (isset($rutas[1]) && !empty($rutas[1])) ? str_replace('-', ' ',$rutas[1]) : ""; ?>">
 					</div>	
 				</div>
 
