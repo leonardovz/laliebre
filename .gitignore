@@ -1,2 +1,4 @@
 images/*
 .htaccess
+error_log
+php/error_log
