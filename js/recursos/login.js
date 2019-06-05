@@ -1,4 +1,4 @@
-// var ruta =ruta();
+var ruta =ruta();
 $(document).ready(function() {
 
     $('#login').on('submit',function(e){
