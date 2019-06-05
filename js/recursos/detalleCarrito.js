@@ -3,15 +3,16 @@ $(document).ready(function(){
     /**/////////////CARRITO DE COMPRAS ////////////*/
     /**/////////////////////////////// ////////////*/
     addCart();
-    var listaCarrito;
-    if(localStorage.getItem('listaProductos') != null ){
-        listaCarrito = JSON.parse(localStorage.getItem('listaProductos'));
-    }else{
-        listaCarrito= [];
-    }
+    
 
     function addCart(){
         $('.producto-carrito').off('click').on('click',function(){
+            var listaCarrito;
+            if(localStorage.getItem('listaProductos') != null ){
+                listaCarrito = JSON.parse(localStorage.getItem('listaProductos'));
+            }else{
+                listaCarrito= [];
+            }
             var idproducto  = $(this).attr('idproducto'),
                      nombre = $(this).attr('nombre'),
                      precio = $(this).attr('precio'),
