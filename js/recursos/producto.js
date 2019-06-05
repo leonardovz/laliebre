@@ -288,7 +288,7 @@ $(document).ready(function(){
         });
     }
     
-    function updateTrabajador(){
+    function updateProducto(){
         $('.delUsuario').off('click').on('click',function(){
             Swal.fire({
                 title: '¿Estas Seguro?',
@@ -374,7 +374,7 @@ $(document).ready(function(){
               });
         });
     }
-    function eliminarUsuario(idUsuario){
+    function enviarProducto(idUsuario){
         $.ajax({
             url: ruta+'php/ajax.php',
             type: 'POST',

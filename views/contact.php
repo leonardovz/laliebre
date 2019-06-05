@@ -12,8 +12,15 @@ include('templates/header.php')?>
 
 
 	<!-- Content page -->
-	<section class="bg0 p-t-104 p-b-116">
+	<section class="bg0 p-t-104 p-b-36">
 		<div class="container">
+			<div class="row text-center">
+				<div class="col-md-12">
+					<h3 style="color:#000; font-size: 3.5em"> <strong> Nosotros contigo, tu con nosotros. </strong> </h3><br>
+				</div>
+			</div>
+			<br>
+			<br>
 			
 			<div class="flex-w flex-tr">
 				<div class="size-210 bor10 p-lr-70 p-t-55 p-b-70 p-lr-15-lg w-full-md">

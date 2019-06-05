@@ -12,6 +12,11 @@
 		$idProducto = explode("-",$rutas[1]);
 		$idProducto = $idProducto[0];
 		$cardResult = buscarProducto($idProducto,$conexion);
+	if(!isset($cardResult['idCategoria'])){
+			echo "exito <br><br><br><br><br>";
+			echo '<script>window.location.replace("' . $ruta . 'error' . '");</script>';
+			// die();
+		}
     ?>
 	<!-- breadcrumb -->
 	<div class="container">
@@ -126,14 +131,14 @@
 												<div class="block2-pic hov-img0">
 													<img src="<?php echo $ruta.$img;?>" alt="IMG-PRODUCT">
 
-													<a href="<?php echo $ruta .$ubicacion['productos'].'/'.  $idProducto;?>" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+													<a href="<?php echo $ruta .$ubicacion['productos'].'/'.  $idProducto.'-'.str_replace(' ', '-', eliminar_tildes($nombre) );?>" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04" >
 														Vista Previa
 													</a>
 												</div>
 
 												<div class="block2-txt flex-w flex-t p-t-14">
 													<div class="block2-txt-child1 flex-col-l ">
-														<a href="product-detail.php" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+														<a href="<?php echo $ruta .$ubicacion['productos'].'/'.  $idProducto.'-'. str_replace(' ', '-', eliminar_tildes($nombre) );?>" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
 															<?php echo $nombre;?>
 														</a>
 
