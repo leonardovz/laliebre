@@ -91,6 +91,15 @@
                 </form>
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-8 box">
+                <div class="table-responsive" id="contenedorPersonal">
+                    <table id="tabla" class="table table-striped">
+                        
+                    </table>
+                </div>
+            </div>
+        </div>
     </section>
 </div>
 <!-- /.content-wrapper -->

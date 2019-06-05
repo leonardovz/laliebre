@@ -1,4 +1,4 @@
-var ruta = ruta();
+// var ruta = ruta();
 $(document).ready(function(){
     $('input[type="checkbox"].flat-red, input[type="radio"].flat-red').iCheck({
         checkboxClass: 'icheckbox_flat-red',
@@ -21,7 +21,7 @@ $(document).ready(function(){
         },
         success: function(resp) {
             $('#contCategoria').html(resp);
-            console.log(resp);
+            // console.log(resp);
             $('.select2').select2();
         }
       });
@@ -45,7 +45,7 @@ $(document).ready(function(){
             swal(' ERROR:  <small class="fs-18">Nombre de producto obligatorio</small>');
         }
         
-        console.log(errores);
+        // console.log(errores);
         if(errores == 0 ){
             Swal.fire({
                 title: 'Atengo!',
@@ -158,7 +158,7 @@ $(document).ready(function(){
             errores +=1;
             $("#errores").html('<div class="alert alert-warning fs-16" role="alert"> <small class="fs-18">ERROR: </small> tienes que agregar contenido a la publicación al menos 200 caracteres</div>');
         }
-        console.log(errores);
+        // console.log(errores);
         if(errores == 0 ){
             registrarAJAX(formData,archivo,this);
         }
@@ -179,7 +179,7 @@ $(document).ready(function(){
             },
             success: function (data) {
                 // data = JSON.stringify(data);
-                console.log(data);
+                // console.log(data);
                 if (data.respuesta == 'exito') {
                     Swal.fire({
                         position: 'top-end',
@@ -229,5 +229,216 @@ $(document).ready(function(){
             img.src = URL.createObjectURL(uploadFile);
         }                 
     }
+    /******////////////////////////////////////////////////////// */
+    /******///////////ACTUALIZACIÓN DE CATEGORIAS//////////////// */
+    /******///////////ACTUALIZACIÓN DE CATEGORIAS//////////////// */
+    /******///////////ACTUALIZACIÓN DE CATEGORIAS//////////////// */
+    /******////////////////////////////////////////////////////// */
+    ActualizarUsuarios();
+
+    function tabladedatos(){
+    $("#tabla").DataTable({
+        "order": [
+            [0, "asc"]
+        ],
+        "language": {
+            "lengthMenu": "Ver _MENU_ registros por página.",
+            "info": "Página _PAGE_ de _PAGES_.",
+            "infoEmpty": "No hay registros disponibles",
+            "infoFiltered": "(filtrada de _MAX_ registros)",
+            "loadingRecords": "Cargando...",
+            "processing": "Procesando...",
+            "search": "Buscar:",
+            "zeroRecords": "No se encontraron registros coincidentes",
+            "paginate": {
+                "next": "Siguiente",
+                "previous": "Anterior"
+            },
+        }
+    });
+    }
+      
+    function ActualizarUsuarios(){
+        $('#contenedorPersonal').html(`
+            <table id="tabla" class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="rowUsuario">
+
+                </tbody>
+            </table>
+        `);
+        $.ajax({
+            url: ruta+'php/ajax.php',
+            type: 'POST',
+            data: 'opcion=traerCategorias',
+            error:function(xhr,status) {
+                // console.log(JSON.stringify(xhr));
+            },
+            success: function(resp) {
+                $("#rowUsuario").html(resp);
+                updateCategoria();
+                tabladedatos();
+                
+            }
+        });
+    }
+    
+    function updateTrabajador(){
+        $('.delUsuario').off('click').on('click',function(){
+            Swal.fire({
+                title: '¿Estas Seguro?',
+                text: "Una vez eliminado no lo podras revertir",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Si, actualizar!'
+                }).then((result) => {
+                if (result.value) {
+                    var usuario = $(this).attr('idusuario');
+                    // console.log(usuario);
+                    eliminarUsuario(usuario);
+                }
+            });
+        })
+        $('.activarUser').off('click').on('click',function(){
+            Swal.fire({
+                title: '¿Estas Seguro?',
+                text: "Estas apunto de activar",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Si, actualizar!'
+                }).then((result) => {
+                if (result.value) {
+                    var usuario = $(this).attr('idusuario');
+                    // console.log(usuario);
+                    activarUsuario(usuario,1);
+                }
+            });
+        })
+        $('.bloquearUser').off('click').on('click',function(){
+            Swal.fire({
+                title: '¿Estas Seguro?',
+                text: "Estas apunto de bloquear",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Si, actualizar!'
+                }).then((result) => {
+                if (result.value) {
+                    var usuario = $(this).attr('idusuario');
+                    // console.log(usuario);
+                    activarUsuario(usuario,0);
+                }
+            });
+        })
+    }
+    function updateCategoria(){
+        $('.editarCategoria').off('click').on('click',function(){
+            // var categoria = $(this).attr('idcategoria');
+            // console.log(categoria);
+            Swal.fire({
+                title: 'Ingresa el nuevo nombre de la categoria',
+                input: 'text',
+                inputAttributes: {
+                  autocapitalize: 'off'
+                },
+                showCancelButton: true,
+                confirmButtonText: 'Guardar',
+                showLoaderOnConfirm: true,
+                preConfirm: (login) => {
+                  return fetch(`//api.github.com/users/${login}`)
+                    .then(response => {
+                      if (!response.ok) {
+                        throw new Error(response.statusText)
+                      }
+                      return response.json()
+                    })
+                    
+                },
+                allowOutsideClick: () => !Swal.isLoading()
+              }).then((result) => {
+                if (result.value) {
+                    // console.log(result.value.login);
+                    
+                    cambiarCategoria(categoria,result.value.login);
+                }
+              });
+        });
+    }
+    function eliminarUsuario(idUsuario){
+        $.ajax({
+            url: ruta+'php/ajax.php',
+            type: 'POST',
+            data: 'opcion=eliminarUsuario&idUsuario='+idUsuario,
+            dataType: 'json',
+            error:function(xhr,status){
+                // console.log(JSON.stringify(xhr) );
+            },
+            success: function(resp) {
+                // console.log(resp);
+                if (resp.respuesta == 'exito') {
+                    swal({
+                        position: 'top-end',
+                        type: 'success',
+                        title: resp.Texto,
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                    ActualizarUsuarios();
+                } else {
+                    swal({
+                        type: 'error',
+                        title: 'Oops...',
+                        text: resp.Texto
+                    });
+                }
+            }
+        });
+    }
+    function cambiarCategoria(idCategoria,nombre){
+        $.ajax({
+            url: ruta+'php/ajax.php',
+            type: 'POST',
+            data: 'opcion=updateCategoria&idCategoria='+idCategoria+'&nombreCategoria='+nombre,
+            dataType: 'json',
+            error:function(xhr,status){
+                // console.log(JSON.stringify(xhr) );
+            },
+            success: function(resp) {
+                // console.log(resp);
+                if (resp.respuesta == 'exito') {
+                    swal({
+                        position: 'top-end',
+                        type: 'success',
+                        title: resp.Texto,
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                    ActualizarUsuarios();
+                } else {
+                    swal({
+                        type: 'error',
+                        title: 'Oops...',
+                        text: resp.Texto
+                    });
+                }
+            }
+        });
+    }
+     /******////////////////////////////////////////////////////// */
+    /******///////////ACTUALIZACIÓN DE CATEGORIAS//////////////// */
+    /******///////////ACTUALIZACIÓN DE CATEGORIAS//////////////// */
+    /******///////////ACTUALIZACIÓN DE CATEGORIAS//////////////// */
+    /******////////////////////////////////////////////////////// */
+
 
 });

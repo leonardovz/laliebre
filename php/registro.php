@@ -44,51 +44,51 @@ if(valEmail($correo)){
                 if ($statement->affected_rows >= 1) {
                     $respuesta = array(
                         'respuesta'=>'exito',
-                        'texto' => 'Registro Exitoso, contactenos para verificar y validar su Cuenta '
+                        'Texto' => 'Registro Exitoso, contactenos para verificar y validar su Cuenta '
                     );
                     $idPublicacion = $statement->insert_id;
                 }else{
                     $respuesta = array(
                         'respuesta'=>'error',
-                        'texto' => 'Error al realizar el registro  ' .(($statement->errno == 1062) ? $correo." ya esta registrado":$statement->error),
+                        'Texto' => 'Error al realizar el registro  ' .(($statement->errno == 1062) ? $correo." ya esta registrado":$statement->error),
                     );
                 }
             } else {
                 $respuesta = array(
                     'respuesta'=>'error',
-                    'texto' => 'Las contraseñas no coinciden',
+                    'Texto' => 'Las contraseñas no coinciden',
                 );
             }
             
         }else{
             $respuesta = array(
                 'respuesta'=>'error',
-                'texto' => 'Caracteres Invalidos en la contraseña',
+                'Texto' => 'Caracteres Invalidos en la contraseña',
             );
         }
     }else{
         $respuesta = array(
             'respuesta'=>'error',
-            'texto' => 'Caracteres invalidos en nombre u apellido, solo ingresa letras',
+            'Texto' => 'Caracteres invalidos en nombre u apellido, solo ingresa letras',
         );
     }
 }else{
     $respuesta = array(
         'respuesta'=>'error',
-        'texto' => 'Introdugiste caracteres no validos',
+        'Texto' => 'Introdugiste caracteres no validos',
     );
 }
 }else{
     $respuesta = array(
         'respuesta'=>'error',
-        'texto' => 'Correo electronico escrito de forma incorrecta',
+        'Texto' => 'Correo electronico escrito de forma incorrecta',
     );
 }
 
 
 // $respuesta = array(
 //     'respuesta'=>'error',
-//     'texto' => 'Introdugiste caracteres no validos',
+//     'Texto' => 'Introdugiste caracteres no validos',
 // );
 
 echo json_encode($respuesta);

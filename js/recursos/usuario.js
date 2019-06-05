@@ -1,4 +1,4 @@
-var ruta = ruta();
+// var ruta = ruta();
 $(document).ready(function(){
     $('#pswd_info').hide();
     $('#pswdR_info').hide();

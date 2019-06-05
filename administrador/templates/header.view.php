@@ -95,7 +95,7 @@
                 <ul class="sidebar-menu" data-widget="tree">
                     <li class="header">Menú de Opciones</li>
 
-
+                    
                     <li class="<?php if($rutas[0]==$ubicacion['perfil']) echo 'active';?>">
                         <a href="<?php echo $ruta.$ubicacion['perfil'];?>">
                             <i class="fa fa-th"></i> <span>Compras</span>
@@ -104,15 +104,7 @@
                             </span>
                         </a>
                     </li>
-                    <li class="<?php if($rutas[0]=='registros') echo 'active';?>">
-                        <a href="<?php echo $ruta;?>registros">
-                            <i class="fa fa-th"></i> <span>Productos</span>
-                            <span class="pull-right-container">
-                                <small class="label pull-right bg-green">new</small>
-                            </span>
-                        </a>
-                    </li>
-
+                   
                     <li class="<?php if($rutas[0]=='configuracion') echo 'active';?>">
                         <a href="<?php echo $ruta;?>configuracion"><i class="fa fa-book"></i>
                             <span>Mis Datos</span>
@@ -121,6 +113,18 @@
                             </span>
                         </a>
                     </li>
+                    <?php if(validarSesion() && validarSesionAdmin() ){?>
+                    
+                    <li class="<?php if($rutas[0]=='registros') echo 'active';?>">
+                        <a href="<?php echo $ruta;?>registros">
+                            <i class="fa fa-th"></i> <span>Productos</span>
+                            <span class="pull-right-container">
+                                <small class="label pull-right bg-green">new</small>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
                     <li class="<?php if($rutas[0]=='usuariossistema') echo 'active';?>">
                         <a href="<?php echo $ruta;?>UsuariosSistema"><i class="fa fa-book"></i>
                             <span>Usuarios Sistema</span>
@@ -129,6 +133,7 @@
                             </span>
                         </a>
                     </li>
+
                     <li class="<?php if($rutas[0]=='notas') echo 'active';?>">
                         <a href="<?php echo $ruta;?>Notas"><i class="fa fa-book"></i>
                             <span>Pedidos</span>
@@ -137,6 +142,7 @@
                             </span>
                         </a>
                     </li>
+                    <?php } ?>
                 </ul>
             </section>
             <!-- /.sidebar -->

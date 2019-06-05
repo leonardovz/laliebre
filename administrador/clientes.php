@@ -20,43 +20,48 @@
     <!-- Main content -->
     <section class="content">
         <div class="row">
-            <div class="col-xs-12">
+            <div class="col-md-12">
                 <div class="box">
-                    <div class="box-header">
-                        <h3 class="box-title">Tabla de Usuarios</h3>
+                    <div class="box-header with-border text-center">
+                        <h3 class="box-title text-center"><i class="fa fa-users" aria-hidden="true"></i> Personal
+                            Registrado</h3>
+
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                    class="fa fa-minus"></i>
+                            </button>
+
+                            <button type="button" class="btn btn-box-tool" data-widget="remove"><i
+                                    class="fa fa-times"></i></button>
+                        </div>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
-                        <table id="example2" class="table table-striped table-responsibe">
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Nombre</th>
-                                    <th>Correo</th>
-                                    <th>Telefono</th>
-                                    <th>Rol</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php for ($i=1; $i < 31; $i++) { ?>
-                                <tr>
-                                    <td><?php echo $i ; ?></td>
-                                    <td>Leonardo Vázquez Angulo
-                                    </td>
-                                    <td>lvazquez@gmail.com</td>
-                                    <td> 32659865</td>
-                                    <td>Administrador</td>
-                                </tr>
-                                <?php } ?>
-                            </tbody>
-                            
-                        </table>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="table-responsive" id="contenedorPersonal">
+                                    <table id="tabla" class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-center">Foto</th>
+                                                <th>Nombre</th>
+                                                <th>Correo</th>
+                                                <th>Telefono</th>
+                                                <th>Teléfono</th>
+                                                <th>acción</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="rowUsuario">
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.row -->
                     </div>
-                    <!-- /.box-body -->
                 </div>
-                <!-- /.box -->
             </div>
-            <!-- /.col -->
         </div>
         <!-- /.row -->
     </section>
@@ -76,35 +81,37 @@ $(document).ready(function() {
 });
 // $('#example2').DataTable()
 ordenarTabla();
-function ordenarTabla(){
+
+function ordenarTabla() {
     $('#example2').DataTable({
-            "language":{
-                "sProcessing":     "Procesando...",
-                "sLengthMenu":     "Mostrar _MENU_ registros",
-                "sZeroRecords":    "No se encontraron resultados",
-                "sEmptyTable":     "Ningún dato disponible en esta tabla",
-                "sInfo":           "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
-                "sInfoEmpty":      "Mostrando registros del 0 al 0 de un total de 0 registros",
-                "sInfoFiltered":   "(filtrado de un total de _MAX_ registros)",
-                "sInfoPostFix":    "",
-                "sSearch":         "Buscar:",
-                "sUrl":            "",
-                "sInfoThousands":  ",",
-                "sLoadingRecords": "Cargando...",
-                "oPaginate": {
-                "sFirst":    "Primero",
-                "sLast":     "Último",
-                "sNext":     "Siguiente",
+        "language": {
+            "sProcessing": "Procesando...",
+            "sLengthMenu": "Mostrar _MENU_ registros",
+            "sZeroRecords": "No se encontraron resultados",
+            "sEmptyTable": "Ningún dato disponible en esta tabla",
+            "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+            "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+            "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+            "sInfoPostFix": "",
+            "sSearch": "Buscar:",
+            "sUrl": "",
+            "sInfoThousands": ",",
+            "sLoadingRecords": "Cargando...",
+            "oPaginate": {
+                "sFirst": "Primero",
+                "sLast": "Último",
+                "sNext": "Siguiente",
                 "sPrevious": "Anterior"
-                },
-                "oAria": {
-                "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
+            },
+            "oAria": {
+                "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
                 "sSortDescending": ": Activar para ordenar la columna de manera descendente"
-                }
             }
-        });
+        }
+    });
 }
 </script>
+<script src="<?php echo $ruta;?>js/recursos/usuariosEdit.js"></script>
 </body>
 
 </html>

@@ -10,7 +10,7 @@
     <section class="content-header">
         <h1>
             Configuración de mi perfil
-            <small>Preview</small>
+            <!-- <small>Preview</small> -->
         </h1>
         <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>

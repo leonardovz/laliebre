@@ -1,4 +1,4 @@
-var ruta = ruta();
+// var ruta = ruta();
 $(document).ready(function(){
     var total = 0;
     var envio = 0;

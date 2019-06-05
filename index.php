@@ -30,7 +30,7 @@ if(isset($_GET['ruta'])){
     elseif($rutas[0]==='imprimir'){             ////// CONTACTO
         require_once 'administrador/impresion.php';
     }
-    elseif($rutas[0]===$ubicacion['perfil'] ){  
+    elseif($rutas[0]===$ubicacion['perfil'] ){   //Compras
         if(validarSesion()){
             require_once 'administrador/index.php';
         }else{
@@ -52,21 +52,21 @@ if(isset($_GET['ruta'])){
         }
     }
     elseif($rutas[0]=='StokProductos'){             ////// perfil
-        if(validarSesion()){
+        if(validarSesion() && validarSesionAdmin()){
             require_once 'administrador/cuenta.php';
         }else{
             reloadLogin($ruta,$ubicacion);
         }
     }
     elseif($rutas[0]==='notas' ){                   ////// perfil
-        if(validarSesion()){
+        if(validarSesion() && validarSesionAdmin()){
             require_once 'administrador/notas.php';
         }else{
             reloadLogin($ruta,$ubicacion);
         }
     }
     elseif($rutas[0]==='usuariossistema' ){         ////// perfil
-        if(validarSesion()){
+        if(validarSesion() && validarSesionAdmin()){
             require_once 'administrador/clientes.php';
         }else{
             reloadLogin($ruta,$ubicacion);
@@ -98,6 +98,13 @@ if(isset($_GET['ruta'])){
 
 function validarSesion(){
     if(isset($_SESSION['validarSesion']) && $_SESSION['validarSesion'] == 'ok'){
+        return true; 
+    }else{
+        return false;
+    }
+}
+function validarSesionAdmin(){
+    if($_SESSION['tipoUser']==1){
         return true; 
     }else{
         return false;

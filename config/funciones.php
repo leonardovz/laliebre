@@ -127,6 +127,11 @@ function traerProdRelacionados($conexion,$categoria,$inicio,$limite){
 	$resultado = $conexion->query($sql);
     return ($resultado->num_rows) ? $resultado : false;
 }
+function buscarUsuarios($conexion,$idUsuario = false ,$inicio = false ,$limite = false ){
+	$sql="SELECT `idUsuario`, `nombre`, `apellidos`, `correo`,`fecha`,tipoUser,validar FROM `usuarios` ".(($idUsuario) ? "WHERE  idUsuario = $idUsuario " :"") ;
+	$resultado = $conexion->query($sql);
+    return ($resultado->num_rows) ? $resultado : false;
+}
 
 /***************************************************** */
 /***************************************************** */

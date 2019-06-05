@@ -79,7 +79,7 @@
   </div>
 </div>
 <?php include_once ('administrador/templates/footer.php');?>
-<script src="<?php echo $ruta;?>js/recursos/login.js"></script>
+<!-- <script src="<?php //echo $ruta;?>js/recursos/login.js"></script> -->
 <!-- <script src="<?php //echo $ruta;?>js/recursos/impresiones.js"></script> -->
 </body>
 </html>
