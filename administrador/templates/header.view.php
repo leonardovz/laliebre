@@ -24,63 +24,39 @@
                     <ul class="nav navbar-nav">
                         <li class="dropdown messages-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="fa fa-cart-arrow-down"></i>
-                                <span class="label label-success">4</span>
+                            <i class="fa fa-cart-arrow-down"></i>
+                            <span class="label label-success" id="cantidad">0</span>
                             </a>
                             <ul class="dropdown-menu">
-                                <li class="header">Carrito</li>
-                                <li>
-                                    <ul class="menu">
-                                        <li>
-                                            <a href="#">
-                                                <div class="pull-left">
-                                                    <img src="<?php echo $ruta;?>imagenes_a_subir/0750101312203M.jpg"
-                                                        class="img-circle" alt="User">
-                                                </div>
-                                                <h4>
-                                                    Jumex
-                                                    <small><i class="fa fa-clock-o"></i> 5</small>
-                                                </h4>
-                                                <p>Bebida 700 ml</p>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="footer"><a href="#">See All Messages</a></li>
+                            <li class="header">Carrito</li>
+                            <li>
+                                <ul class="menu" id="items">
+                                </ul>
+                            </li>
+                            <li class="footer"><a href="<?php echo $ruta;?>carrito">Ver mi Carrito</a></li>
                             </ul>
                         </li>
+
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <span class="hidden-xs">Leonardo Vázquez</span>
+                            <img src="<?php echo $ruta;?>images/mision.png" class="img-circle" alt="User Image" style="width: 3vh;">
+
+                                <span class="hidden-xs"><?php echo $_SESSION['nombre']. ' ' .$_SESSION['apellidos'];?></span>
                             </a>
                             <ul class="dropdown-menu">
                                 <!-- User image -->
                                 <li class="user-header">
-
+                                    <img src="<?php echo $ruta;?>images/mision.png" class="img-circle" alt="User Image">
                                     <p>
-                                        Alexander Pierce - Web Developer
-                                        <small>Member since Nov. 2012</small>
+                                        <?php echo $_SESSION['nombre']. ' ' .$_SESSION['apellidos'];?>
                                     </p>
                                 </li>
-                                <!-- Menu Body -->
-                                <li class="user-body">
-                                    <div class="row">
-                                        <div class="col-xs-4 text-center">
-                                            <a href="#">Followers</a>
-                                        </div>
-                                        <div class="col-xs-4 text-center">
-                                            <a href="#">Sales</a>
-                                        </div>
-                                        <div class="col-xs-4 text-center">
-                                            <a href="#">Friends</a>
-                                        </div>
-                                    </div>
-                                    <!-- /.row -->
+                              
                                 </li>
                                 <!-- Menu Footer-->
                                 <li class="user-footer">
                                     <div class="pull-left">
-                                        <a href="#" class="btn btn-default btn-flat">Profile</a>
+                                        <!-- <a href="#" class="btn btn-default btn-flat">Profile</a> -->
                                     </div>
                                     <div class="pull-right">
                                         <a id="cerrarSesion" href="#" class="btn btn-default btn-flat">Cerrar Sesion</a>

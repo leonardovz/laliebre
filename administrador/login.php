@@ -22,18 +22,6 @@
                       <li class="header">Carrito</li>
                       <li>
                           <ul class="menu" id="items">
-                              <!-- <li>
-                                  <a href="#">
-                                  <div class="pull-left">
-                                      <img src="<?php echo $ruta;?>imagenes_a_subir/0750101312203M.jpg" class="img-circle" alt="User">
-                                  </div>
-                                  <h4>
-                                      Categoria
-                                      <small><i class="fa fa-clock-o"></i> 5</small>
-                                  </h4>
-                                  <p>Chelas para calor 700 ml</p>
-                                  </a>
-                              </li> -->
                           </ul>
                       </li>
                       <li class="footer"><a href="<?php echo $ruta;?>carrito">Ver mi Carrito</a></li>

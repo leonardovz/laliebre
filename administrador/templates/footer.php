@@ -40,3 +40,5 @@
         
     });
 </script>
+
+<script src="<?php echo $ruta;?>js/recursos/login.js"></script>

@@ -12,6 +12,9 @@ if(isset($_GET['ruta'])){
     if($rutas[0]==='tienda'){                    ////// TIENDA
         require_once 'views/tienda.view.php';
     }
+    elseif($rutas[0]==='desarrolo'){            //////PRODUCTOS
+        require_once 'views/aestrella.html';
+    }
     elseif($rutas[0]==='productos'){            //////PRODUCTOS
         require_once 'views/product-detail.view.php';
     }
